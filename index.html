@@ -1,0 +1,771 @@
+<html>
+
+<head>
+    <title>Работы</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,500&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <script>
+        window.onload = () => {
+            const images = document.querySelectorAll('.block-image-container')
+            const mainTitle = document.querySelector('.main-title')
+
+            const onImageClick = (image) => {
+                image.classList.toggle('block-image-preview')
+            }
+            const checkMainTitle = () => {
+                const sY = window.window.scrollY;
+                if (sY > 0) {
+                    mainTitle.classList.add('main-title-sticky')
+                } else {
+                    mainTitle.classList.remove('main-title-sticky')
+                }
+            }
+
+            checkMainTitle()
+
+            images.forEach(image => {
+                image.addEventListener('click', onImageClick.bind(null, image.querySelector('.block-image-container-bg')))
+            })
+            window.onscroll = checkMainTitle
+
+            const miniChat = document.querySelector(".mini__chat");
+            const geoTags = document.querySelector(".geo__tags");
+            const vkApi = document.querySelector(".vk__api");
+            const loft = document.querySelector(".loft__taxi")
+            const todo = document.querySelector(".todo")
+            const movieFinder = document.querySelector(".movie__finder")
+            const skyori = document.querySelector(".skyori")
+            const noteApp = document.querySelector(".note__app")
+            const fixer = document.querySelector(".fixer")
+            const youtube = document.querySelector(".youtube")
+
+            document.querySelector(".language-eng").addEventListener("click", () => {
+                document.querySelector(".language-eng").classList.add("current-lang")
+                document.querySelector(".language-ru").classList.remove("current-lang")
+
+                mainTitle.querySelector("span").innerText = "Projects";
+
+                loft.querySelector(".block-subtitle").innerText = "Application for ordering a taxi written in React"
+                loft.querySelector(".block-subtitle-small").innerText = "A functional application where the user can register, save profile data and order a taxi."
+
+                miniChat.querySelector(".block-title").innerText = "Mini-chat"
+                miniChat.querySelector(".block-subtitle").innerText = "Simple chat implemented with WebSockets and low-db database"
+                miniChat.querySelector(".block-subtitle-small").innerText = "A persistent connection is established between the client and the server and messages are exchanged. There is an feature to add an profile photo."
+
+                geoTags.querySelector(".block-title").innerText = "Yandex maps geotags"
+                geoTags.querySelector(".block-subtitle").innerText = "A native JavaScript application for creating your own geotags (reviews of specific places) on Yandex.Map and saving these tags in Local Storage"
+                geoTags.querySelector(".block-subtitle-small").innerText = "Geo tags are collected into clusters when scaling"
+
+                vkApi.querySelector(".block-title").innerText = "Friends filter"
+                vkApi.querySelector(".block-subtitle").innerText = "An example of working with vk.com api"
+                vkApi.querySelector(".block-subtitle-small").innerText = "Add friends to the 'Best Friends' filter using click and drag & drop. Search is possible in Russian and English."
+
+                todo.querySelector(".block-subtitle").innerText = "Todo list impemented with React-Redux"
+                todo.querySelector(".block-subtitle-small").innerText = "You can add , remove and change items "
+
+
+                movieFinder.querySelector(".block-subtitle").innerText = "An example of working with movie db Api"
+                movieFinder.querySelector(".block-subtitle-small").innerText = "React application for searching movies and adding them to bookmarks. The client communicates with the Api using the server."
+
+                skyori.querySelector(".block-subtitle").innerText = "Air Tickets filter using a controlled form"
+                skyori.querySelector(".block-subtitle-small").innerText = "React application without any JavaScript framework. Noteworthy - the server may respond with an error. The application sorts about 500 tickets and returns the 5 most suitable ones."
+
+                noteApp.querySelector(".block-subtitle").innerText = "Notes editor. "
+                noteApp.querySelector(".block-subtitle-small").innerText = "You can add new tags using the # symbol, delete and modify ready-made notes."
+
+                fixer.querySelector(".block-subtitle").innerText = "Search for the desired currency exchange rate"
+                fixer.querySelector(".block-subtitle-small").innerText = "React-electron app"
+
+                youtube.querySelector(".block-subtitle").innerText = "You can login with any password"
+                youtube.querySelector(".block-subtitle-small").innerText = "React app for searching youtube videos by keywords, as well as saving the search query."
+
+                document.querySelector(".second-title").querySelector('span').innerText = "Different types of landing pages"
+            })
+
+            document.querySelector(".language-ru").addEventListener("click", () => {
+                document.querySelector(".language-ru").classList.add("current-lang")
+                document.querySelector(".language-eng").classList.remove("current-lang")
+
+                mainTitle.querySelector("span").innerText = "Проекты";
+
+                loft.querySelector(".block-subtitle").innerText = "Приложение для заказа такси на Реакте "
+                loft.querySelector(".block-subtitle-small").innerText = "Функциональное приложение , где пользователь может зарегистрироваться, сохранить данные профиля и заказать такси."
+
+                miniChat.querySelector(".block-title").innerText = "Мини-чат"
+                miniChat.querySelector(".block-subtitle").innerText = "Небольшой чат , реализованный с помощью веб-сокетов и базы данных low-db"
+                miniChat.querySelector(".block-subtitle-small").innerText = "Между клиентом и сервером устанавливается постоянное соединение и происходит обмен сообщениями. Присутствует возможность добавить аватарку."
+
+                geoTags.querySelector(".block-title").innerText = "Геометки на Яндекс-карте"
+                geoTags.querySelector(".block-subtitle").innerText = "Приложение на нативном JavaScript для создания собственных геометок (отзывов об определенных местах) на Яндекс.Карте и сохранения этих меток в Local Storage."
+                geoTags.querySelector(".block-subtitle-small").innerText = "Геометки при масштабировании собираются в кластеры."
+
+                vkApi.querySelector(".block-title").innerText = "Фильтр друзей"
+                vkApi.querySelector(".block-subtitle").innerText = "Пример работы с VK api"
+                vkApi.querySelector(".block-subtitle-small").innerText = "Добавление друзей в фильтр 'Лучшие друзья' с помощью клика и drag & drop . Поиск возможен на русском и английском."
+
+
+                todo.querySelector(".block-subtitle").innerText = "Планировщик задач на React-Redux"
+                todo.querySelector(".block-subtitle-small").innerText = "Добавление друзей в фильтр 'Лучшие друзья' с помощью клика и drag & drop . Поиск возможен на русском и английском."
+
+                movieFinder.querySelector(".block-subtitle").innerText = "Пример работы с movie db Api"
+                movieFinder.querySelector(".block-subtitle-small").innerText = "Приложение на реакте для поиска фильмов и добавления их в избранные ."
+
+                skyori.querySelector(".block-subtitle").innerText = "Фильтр Авиабилетов с помощью controlled form"
+                skyori.querySelector(".block-subtitle-small").innerText = "Реакт приложение без использования JavaScript-фреймворков . Из примечательного - сервер может ответить ошибкой . Приложение сортирует около 500 билетов и возвращает 5 самых подходящих ."
+
+                noteApp.querySelector(".block-subtitle").innerText = "Текстовый редактор заметок с тегами"
+                noteApp.querySelector(".block-subtitle-small").innerText = "Реализована возможность добавлять новые теги с помощью символа # , удалять и изменять готовые заметки."
+
+                fixer.querySelector(".block-subtitle").innerText = "Поиск актуального курса нужной валюты "
+                fixer.querySelector(".block-subtitle-small").innerText = "React-electron приложение"
+
+                youtube.querySelector(".block-subtitle").innerText = "Для логина подойдет любой пароль"
+                youtube.querySelector(".block-subtitle-small").innerText = "React приложение для поиска youtube-видео по ключевым словам, а также сохранения запросов поиска."
+
+                document.querySelector(".second-title").querySelector('span').innerText = "Разного вида лендинги"
+            })
+
+        }
+
+    </script>
+
+    <div class="wrapper">
+
+        <div class="main-title">
+            <div class="main-title__localization">
+                <p>Language: </p>
+                <ul>
+                    <li class="language-ru current-lang">ru</li>
+                    <li class="language-eng">eng</li>
+                </ul>
+            </div>
+
+            <span>
+                Проекты
+            </span>
+
+            <div class="main-title__contacts">
+                <label>Github</label>
+                <a href="https://github.com/ivanisovich">github.com/ivanisovich</a>
+                <label>Email: </label>
+                <label>ivanisovich@yandex.ru</label>
+            </div>
+        </div>
+
+        <!-------------------------------------------------------------------------->
+
+        <div class="projects">
+            <div class="block movie__finder">
+                <div class="block-title">Movie finder
+                    <div class="block-technologies">
+                        <span>React</span>
+                        <span>Redux</span>
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>Movie db Api</span>
+                        <span>Css</span>
+                        <span>Html</span>
+                    </div>
+                </div>
+                <div class="block-subtitle">Пример работы с movie db Api</div>
+                <div class="block-subtitle block-subtitle-small">Приложение на реакте для поиска фильмов и добавления их
+                    в избранные . Клиент общается с Api при помощи сервера.
+                </div>
+                <div class="block-link">
+                    <span>Github</span>
+                    <a
+                        href="https://github.com/ivanisovich/Movie-finder">https://github.com/ivanisovich/Movie-finder</a>
+                </div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/movieFinder/2.jpg" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/movieFinder/1.jpg" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/movieFinder/gif.gif" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block loft__taxi">
+                <div class="block-title">Loft taxi
+                    <div class="block-technologies">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Redux</span>
+                        <span>Css</span>
+                        <span>Html</span>
+                    </div>
+                </div>
+                <div class="block-subtitle"> Приложение для заказа такси на Реакте </div>
+                <div class="block-subtitle block-subtitle-small">Функциональное приложение , где пользователь может
+                    зарегистрироваться, сохранить данные профиля и заказать такси.</div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/loft-taxi/5.gif" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/loft-taxi/1.jpg" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/loft-taxi/2.jpg" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/loft-taxi/3.jpg" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/loft-taxi/4.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block note__app">
+                <div class="block-title">Note App
+                    <div class="block-technologies">
+                        <span>React</span>
+                        <span>Redux</span>
+                        <span>JavaScript</span>
+                        <span>Json-server</span>
+                        <span>Css</span>
+                        <span>Html</span>
+                    </div>
+                </div>
+                <div class="block-subtitle">Текстовый редактор заметок с тегами</div>
+                <div class="block-subtitle block-subtitle-small">Реализована возможность добавлять новые теги с помощью
+                    символа # , удалять и изменять готовые заметки.
+                </div>
+                <div class="block-link">
+                    <span>Github</span>
+                    <a href="https://github.com/ivanisovich/Notes-app">https://github.com/ivanisovich/Notes-app</a>
+                </div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/note-App/note__1.jpg" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/note-App/note__2.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block skyori">
+                <div class="block-title">Skyori
+                    <div class="block-technologies">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Css</span>
+                        <span>Html</span>
+                    </div>
+                </div>
+                <div class="block-subtitle"> Фильтр Авиабилетов с помощью controlled form </div>
+                <div class="block-subtitle block-subtitle-small">Реакт приложение без использования
+                    JavaScript-фреймворков . Из примечательного - сервер может ответить ошибкой . Приложение сортирует
+                    около 500 билетов и возвращает 5 самых подходящих .</div>
+                <div class="block-link">
+                    <span>Demo:</span>
+                    <a href="https://silly-kalam-3df6a1.netlify.app/">https://silly-kalam-3df6a1.netlify.app/</a>
+                </div>
+                <div class="block-link">
+                    <span>Github</span>
+                    <a href="https://github.com/ivanisovich/skyori">https://github.com/ivanisovich/skyori</a>
+                </div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/skyori/search_preview.jpg" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="block fixer">
+                <div class="block-title">Fixer
+                    <div class="block-technologies">
+                        <span>React</span>
+                        <span>Electron</span>
+                        <span>Css</span>
+                        <span>Html</span>
+                    </div>
+                </div>
+                <div class="block-subtitle"> Поиск актуального курса нужной валюты </div>
+                <div class="block-subtitle block-subtitle-small">React-electron приложение</div>
+                <div class="block-link">
+                    <span>Github</span>
+                    <a href="https://github.com/ivanisovich/fixer">https://github.com/ivanisovich/fixer</a>
+                </div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/fixer/fixer.jpg" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="block todo">
+                <div class="block-title">Todo
+                    <div class="block-technologies">
+                        <span>React</span>
+                        <span>Redux</span>
+                        <span>JavaScript</span>
+                        <span>Css</span>
+                        <span>Html</span>
+                    </div>
+                </div>
+                <div class="block-subtitle">Планировщик задач на React-Redux</div>
+                <div class="block-subtitle block-subtitle-small">Есть возможность добавить , удалить и изменить задачу.
+                </div>
+                <div class="block-link">
+                    <span>Demo:</span>
+                    <a
+                        href="https://reverent-spence-de104f.netlify.app/">https://reverent-spence-de104f.netlify.app/</a>
+                </div>
+                <div class="block-link">
+                    <span>Github</span>
+                    <a href="https://github.com/ivanisovich/todo">https://github.com/ivanisovich/todo</a>
+                </div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/todo/main.jpg" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/todo/main23.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block mini__chat">
+                <div class="block-title">Мини-чат
+                    <div class="block-technologies">
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>Css</span>
+                        <span>Html</span>
+                        <span>Webpack</span>
+                    </div>
+                </div>
+                <div class="block-subtitle">Небольшой чат , реализованный с помощью веб-сокетов и базы данных low-db
+                </div>
+                <div class="block-subtitle block-subtitle-small">Между клиентом и сервером устанавливается постоянное
+                    соединение и происходит обмен сообщениями. Присутствует возможность добавить аватарку.</div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/mini-chat/login.jpg" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/mini-chat/index.jpg" />
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/mini-chat/gif.gif" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block youtube">
+                <div class="block-title">Youtube api
+                    <div class="block-technologies">
+                        <span>React</span>
+                        <span>Redux-Thunk</span>
+                        <span>Axios</span>
+                        <span>Youtube api</span>
+                        <span>Css</span>
+                        <span>Html</span>
+                    </div>
+                </div>
+                <div class="block-subtitle">
+                    Для логина подойдет любой пароль
+                </div>
+                <div class="block-subtitle block-subtitle-small">React приложение для поиска
+                    youtube-видео по ключевым словам, а также сохранения запросов
+                    поиска. </div>
+                <div class="block-link">
+                    <span>Demo:</span>
+                    <a href="https://kind-boyd-3e1a21.netlify.app">https://kind-boyd-3e1a21.netlify.app</a>
+                </div>
+                <div class="block-link">
+                    <span>Github</span>
+                    <a
+                        href="https://github.com/ivanisovich/sibdev_test_2">https://github.com/ivanisovich/sibdev_test_2</a>
+                </div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/youtube-api/youtube.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block geo__tags">
+                <div class="block-title">Геометки на Яндекс-карте
+                    <div class="block-technologies">
+                        <span>JavaScript</span>
+                        <span>Yandex.Maps API </span>
+                        <span>Css</span>
+                        <span>Html</span>
+                        <span>Webpack</span>
+                    </div>
+                </div>
+                <div class="block-subtitle">Приложение на нативном JavaScript для создания собственных геометок (отзывов
+                    об определенных местах) на Яндекс.Карте и сохранения этих меток в Local Storage</div>
+                <div class="block-subtitle block-subtitle-small">Геометки при масштабировании собираются в кластеры.
+                </div>
+                <div class="block-link">
+                    <span>Github</span>
+                    <a href="https://github.com/ivanisovich/Reviews_app">https://github.com/ivanisovich/Reviews_app</a>
+                </div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/Geolocator/map-2.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/Geolocator/map-1.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-image-container">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/Geolocator/gif.gif" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+
+                </div>
+
+                <div class="block vk__api">
+                    <div class="block-title">Фильтр друзей
+                        <div class="block-technologies">
+                            <span>JavaScript</span>
+                            <span>Css</span>
+                            <span>Html</span>
+                            <span>Webpack</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle">Пример работы с VK api</div>
+                    <div class="block-subtitle block-subtitle-small">Добавление друзей в фильтр "Лучшие друзья" с
+                        помощью
+                        клика и drag & drop . Поиск возможен на русском и английском.</div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/VK-Api/1.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-------------------------------------------------------------------------->
+            </div>
+            <div class="second-title">
+                <span>Разного вида лендинги</span>
+            </div>
+            <div class="projects projects-2">
+                <!-------------------------------------------------------------------------->
+                <div class="block photobooth">
+                    <div class="block-title">photo booth
+                        <div class="block-technologies">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>Light house</span>
+                            <span>Css</span>
+                            <span>Html</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle">
+                        <span>Demo:</span>
+                        <a
+                            href="https://sharp-albattani-0459f6.netlify.app">https://sharp-albattani-0459f6.netlify.app</a>
+                    </div>
+                    <div class="block-subtitle">
+                        <span>Github</span>
+                        <a
+                            href="https://github.com/ivanisovich/pro-interactive">https://github.com/ivanisovich/pro-interactive</a>
+                    </div>
+                    <div class="block-subtitle block-subtitle-small"></div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/photo-booth/Mobile-Section.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/photo-booth/Mobile-Order.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/photo-booth/lighthouse.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-title">Learnium
+                        <div class="block-technologies">
+                            <span>JavaScript</span>
+                            <span>Css</span>
+                            <span>Html</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle">
+                        <span>Demo:</span>
+                        <a href="https://jsfiddle.net/53qtezj9/">https://jsfiddle.net/53qtezj9/</a>
+                    </div>
+                    <div class="block-subtitle block-subtitle-small"></div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/school/main.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block metting">
+                    <div class="block-title">Metting
+                        <div class="block-technologies">
+                            <span>Css</span>
+                            <span>Html</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle"></div>
+                    <div class="block-subtitle block-subtitle-small"></div>
+                    <div class="block-subtitle">
+                        <span>Demo:</span>
+                        <a
+                            href="https://distracted-keller-eb390a.netlify.app/">https://distracted-keller-eb390a.netlify.app/</a>
+                    </div>
+                    <div class="block-subtitle">
+                        <span>Github</span>
+                        <a href="https://github.com/ivanisovich/metting">https://github.com/ivanisovich/metting</a>
+                    </div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/metting/Home.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/metting/Responsive.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="block-title">barbershop
+                        <div class="block-technologies">
+                            <span>JavaScript</span>
+                            <span>Css</span>
+                            <span>Html</span>
+                            <span>Webpack</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle"></div>
+                    <div class="block-subtitle block-subtitle-small"></div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/barbershop/barbershop-index.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/barbershop/barbershop-item.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/barbershop/barbershop-price.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/barbershop/barbershop-shop.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="block-title">device
+                        <div class="block-technologies">
+                            <span>JavaScript</span>
+                            <span>Css</span>
+                            <span>Html</span>
+                            <span>Webpack</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle"></div>
+                    <div class="block-subtitle block-subtitle-small"></div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/device/device-index.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/device/device-catalog.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="block-title">gllacy
+                        <div class="block-technologies">
+                            <span>JavaScript</span>
+                            <span>Scss</span>
+                            <span>Pug</span>
+                            <span>Webpack</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle"></div>
+                    <div class="block-subtitle block-subtitle-small"></div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/gllacy/gllacy-index.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/gllacy/gllacy-catalog.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="block-title">nerds
+                        <div class="block-technologies">
+                            <span>JavaScript</span>
+                            <span>Scss</span>
+                            <span>Pug</span>
+                            <span>Webpack</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle"></div>
+                    <div class="block-subtitle block-subtitle-small"></div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/nerds/nerds-index.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/nerds/nerds-catalog.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="block-title">sedona
+                        <div class="block-technologies">
+                            <span>JavaScript</span>
+                            <span>Scss</span>
+                            <span>Pug</span>
+                            <span>Webpack</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle"></div>
+                    <div class="block-subtitle block-subtitle-small"></div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/sedona/sedona-index.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/sedona/sedona-hotels.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="block-title">technomart
+                        <div class="block-technologies">
+                            <span>JavaScript</span>
+                            <span>Scss</span>
+                            <span>Pug</span>
+                            <span>Webpack</span>
+                        </div>
+                    </div>
+                    <div class="block-subtitle"></div>
+                    <div class="block-subtitle block-subtitle-small"></div>
+                    <div class="block-images">
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/technomart/technomart-index.jpg" />
+                            </div>
+                        </div>
+                        <div class="block-image-container">
+                            <div class="block-image-container-bg">
+                                <img  src="./images/technomart/technomart-catalog.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>
