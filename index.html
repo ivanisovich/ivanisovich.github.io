@@ -40,6 +40,7 @@
             const movieFinder = document.querySelector(".movie-finder")
             const noteApp = document.querySelector(".note-app")
             const youtube = document.querySelector(".youtube")
+            const ticketsFilter = document.querySelector(".skyori")
 
             document.querySelector(".language-eng").addEventListener("click", () => {
                 document.querySelector(".language-eng").classList.add("current-lang")
@@ -62,6 +63,9 @@
 
                 youtube.querySelector(".block-subtitle").innerText = "You can login with any password"
                 youtube.querySelector(".block-subtitle-small").innerText = "React app for searching youtube videos by keywords, as well as saving the search query."
+
+                ticketsFilter.querySelector(".block-subtitle").innerText = "Air Tickets filter using a controlled form"
+                ticketsFilter.querySelector(".block-subtitle-small").innerText = "React application without any JavaScript framework. Noteworthy - the server may respond with an error. The application sorts about 500 tickets and returns the 5 most suitable ones."
 
                 document.querySelector(".second-title").querySelector('span').innerText = "Different types of landing pages"
             })
@@ -88,6 +92,9 @@
                 youtube.querySelector(".block-subtitle").innerText = "Для логина подойдет любой пароль"
                 youtube.querySelector(".block-subtitle-small").innerText = "React приложение для поиска youtube-видео по ключевым словам, а также сохранения запросов поиска."
 
+                ticketsFilter.querySelector(".block-subtitle").innerText = "Фильтр Авиабилетов с помощью controlled form"
+                ticketsFilter.querySelector(".block-subtitle-small").innerText = "Реакт приложение без использования JavaScript-фреймворков . Из примечательного - сервер может ответить ошибкой . Приложение сортирует около 500 билетов и возвращает 5 самых подходящих ."
+               
                 document.querySelector(".second-title").querySelector('span').innerText = "Разного вида лендинги"
             })
 
@@ -189,6 +196,37 @@
                             <img  src="./images/note-App/note__2.jpg" />
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="block skyori">
+                <div class="block-title">Tickets filter
+                    <div class="block-technologies">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Css</span>
+                        <span>Html</span>
+                    </div>
+                </div>
+                <div class="block-subtitle"> Фильтр Авиабилетов с помощью controlled form </div>
+                <div class="block-subtitle block-subtitle-small">Реакт приложение без использования
+                    JavaScript-фреймворков . Из примечательного - сервер может ответить ошибкой . Приложение сортирует
+                    около 500 билетов и возвращает 5 самых подходящих .</div>
+                <div class="block-link">
+                    <span>Demo:</span>
+                    <a href="https://silly-kalam-3df6a1.netlify.app/">https://silly-kalam-3df6a1.netlify.app/</a>
+                </div>
+                <div class="block-link">
+                    <span>Github</span>
+                    <a href="https://github.com/ivanisovich/skyori">https://github.com/ivanisovich/skyori</a>
+                </div>
+                <div class="block-images">
+                    <div class="block-image-container">
+                        <div class="block-image-container-bg">
+                            <img  src="./images/skyori/search_preview.jpg" />
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -296,9 +334,11 @@
                 </div>
                
             </div>
+
             <div class="second-title">
                 <span>Разного вида лендинги</span>
             </div>
+
             <div class="projects landing-projects">
           
                 <div class="block photobooth">
@@ -311,6 +351,7 @@
                             <span>Html</span>
                         </div>
                     </div>
+                    <div class="block-subtitle">Метрики Lighthouse привидены приведены для телефонов</div>
                     <div class="block-subtitle">
                         <span>Demo:</span>
                         <a
