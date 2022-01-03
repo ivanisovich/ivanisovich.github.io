@@ -320,6 +320,9 @@ a {
 
     .block {
         padding: 15px;
+    }
+
+    .main-title__contacts--responsive label{
 
     }
 
@@ -339,8 +342,11 @@ a {
 
 
     .main-title__localization {
-        padding-right: 10px;
         display: inline;
+    }
+
+    .main-title__localization li{
+        padding:5px;
     }
 
     .main-title__localization p {
@@ -357,11 +363,6 @@ a {
 
     .main-title__contacts {
         font-size: 12px;
-    }
-
-
-    .main-title span {
-        margin-left: 0px;
     }
 
     .block-title {
@@ -404,6 +405,7 @@ a {
 
     .main-title__contacts--responsive{
         display: block;
+        padding-bottom: 13px;
     }
     .main-title__contacts--responsive a{
         line-height: 40px;
@@ -412,7 +414,7 @@ a {
     .main-title__localization ul {
         padding-left: 0px;
         margin-left: 0px;
-        margin-right: 0px;
+      
         margin-bottom: 0px;
     }
 
@@ -445,5 +447,9 @@ a {
 @media (max-width: 370px) {
     .main-title span{
         display: none;
+    }
+
+    .main-title{
+        justify-content: space-between;
     }
 }
