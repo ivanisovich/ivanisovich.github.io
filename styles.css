@@ -268,12 +268,15 @@ a {
     object-fit: cover;
 }
 
-.learnium img,
-.home-span img,
 .metting img,
 .todo img,
 .photobooth img{
     object-fit: contain;
+}
+
+.learnium img,
+.home-span img{
+    object-fit: cover;
 }
 
 .image-contain {
