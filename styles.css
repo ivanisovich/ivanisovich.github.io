@@ -322,6 +322,10 @@ a {
         padding: 15px;
     }
 
+    .block-technologies{
+        margin-left: 0px;
+    }
+
     .main-title__contacts--responsive label{
 
     }

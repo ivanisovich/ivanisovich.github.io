@@ -41,6 +41,7 @@
             const noteApp = document.querySelector(".note-app")
             const youtube = document.querySelector(".youtube")
             const ticketsFilter = document.querySelector(".skyori")
+            const homeSpan = document.querySelector(".home-span")
 
             document.querySelector(".language-eng").addEventListener("click", () => {
                 document.querySelector(".language-eng").classList.add("current-lang")
@@ -49,23 +50,23 @@
                 mainTitle.querySelector("span").innerText = "Projects";
 
                 miniChat.querySelector(".block-title").innerText = "Mini-chat"
-                miniChat.querySelector(".block-subtitle").innerText = "Simple chat implemented with WebSockets and low-db database"
-                miniChat.querySelector(".block-subtitle-small").innerText = "A persistent connection is established between the client and the server and messages are exchanged. There is an feature to add an profile photo."
+                miniChat.querySelector(".block-subtitle").innerText = "Simple chat implemented with WebSockets and low-db database ."
 
                 todo.querySelector(".block-subtitle").innerText = "Todo list impemented with React-Redux"
-                todo.querySelector(".block-subtitle-small").innerText = "You can add , remove and change items "
 
                 movieFinder.querySelector(".block-subtitle").innerText = "An example of working with movie db Api"
-                movieFinder.querySelector(".block-subtitle-small").innerText = "React application for searching movies and adding them to bookmarks. The client communicates with the Api using the server."
+                movieFinder.querySelector(".block-subtitle-small").innerText = "React application for searching movies and adding them to bookmarks ."
 
                 noteApp.querySelector(".block-subtitle").innerText = "Notes editor. "
-                noteApp.querySelector(".block-subtitle-small").innerText = "You can add new tags using the # symbol, delete and modify ready-made notes."
+                noteApp.querySelector(".block-subtitle-small").innerText = "You can add new tags using the # symbol, delete and modify ready-made notes ."
 
                 youtube.querySelector(".block-subtitle").innerText = "You can login with any password"
-                youtube.querySelector(".block-subtitle-small").innerText = "React app for searching youtube videos by keywords, as well as saving the search query."
+                youtube.querySelector(".block-subtitle-small").innerText = "React app for searching youtube videos by keywords, as well as saving the search query ."
 
                 ticketsFilter.querySelector(".block-subtitle").innerText = "Air Tickets filter using a controlled form"
-                ticketsFilter.querySelector(".block-subtitle-small").innerText = "React application without any JavaScript framework. Noteworthy - the server may respond with an error. The application sorts about 500 tickets and returns the 5 most suitable ones."
+                ticketsFilter.querySelector(".block-subtitle-small").innerText = "React application without any JavaScript framework . Noteworthy - the server may respond with an error ."
+
+                homeSpan.querySelector(".block-subtitle").innerText = "Lighthouse metrics are shown for phones. Couldn't get 100 points everywhere because of extensions ."
 
                 document.querySelector(".second-title").querySelector('span').innerText = "Different types of landing pages"
             })
@@ -77,23 +78,23 @@
                 mainTitle.querySelector("span").innerText = "Проекты";
 
                 miniChat.querySelector(".block-title").innerText = "Мини-чат"
-                miniChat.querySelector(".block-subtitle").innerText = "Небольшой чат , реализованный с помощью веб-сокетов и базы данных low-db"
-                miniChat.querySelector(".block-subtitle-small").innerText = "Между клиентом и сервером устанавливается постоянное соединение и происходит обмен сообщениями. Присутствует возможность добавить аватарку."
+                miniChat.querySelector(".block-subtitle").innerText = "Небольшой чат , реализованный с помощью веб-сокетов и базы данных low-db ."
 
                 todo.querySelector(".block-subtitle").innerText = "Планировщик задач на React-Redux"
-                todo.querySelector(".block-subtitle-small").innerText = "Есть возможность добавить , удалить и изменить задачу."
 
                 movieFinder.querySelector(".block-subtitle").innerText = "Пример работы с movie db Api"
                 movieFinder.querySelector(".block-subtitle-small").innerText = "Приложение на реакте для поиска фильмов и добавления их в избранные ."
 
-                noteApp.querySelector(".block-subtitle").innerText = "Текстовый редактор заметок с тегами"
-                noteApp.querySelector(".block-subtitle-small").innerText = "Реализована возможность добавлять новые теги с помощью символа # , удалять и изменять готовые заметки."
+                noteApp.querySelector(".block-subtitle").innerText = "Редактор заметок с тегами"
+                noteApp.querySelector(".block-subtitle-small").innerText = "Реализована возможность добавлять новые теги с помощью символа # , удалять и изменять готовые заметки ."
 
                 youtube.querySelector(".block-subtitle").innerText = "Для логина подойдет любой пароль"
-                youtube.querySelector(".block-subtitle-small").innerText = "React приложение для поиска youtube-видео по ключевым словам, а также сохранения запросов поиска."
+                youtube.querySelector(".block-subtitle-small").innerText = "React приложение для поиска youtube-видео по ключевым словам , а также сохранения запросов поиска ."
 
                 ticketsFilter.querySelector(".block-subtitle").innerText = "Фильтр Авиабилетов с помощью controlled form"
-                ticketsFilter.querySelector(".block-subtitle-small").innerText = "Реакт приложение без использования JavaScript-фреймворков . Из примечательного - сервер может ответить ошибкой . Приложение сортирует около 500 билетов и возвращает 5 самых подходящих ."
+                ticketsFilter.querySelector(".block-subtitle-small").innerText = "Реакт приложение без использования JavaScript-фреймворков . Из примечательного - сервер может ответить ошибкой ."
+
+                homeSpan.querySelector(".block-subtitle").innerText = "Метрики Lighthouse приведены для телефонов . Из-за расширений , не удалось везде получить 100 баллов ."
 
                 document.querySelector(".second-title").querySelector('span').innerText = "Разного вида лендинги"
             })
@@ -145,7 +146,7 @@
                 </div>
                 <div class="block-subtitle">Пример работы с movie db Api</div>
                 <div class="block-subtitle block-subtitle-small">Приложение на реакте для поиска фильмов и добавления их
-                    в избранные . Клиент общается с Api при помощи сервера.
+                    в избранные .
                 </div>
                 <div class="block-link">
                     <span>Github</span>
@@ -182,9 +183,9 @@
                         <span>Html</span>
                     </div>
                 </div>
-                <div class="block-subtitle">Текстовый редактор заметок с тегами</div>
+                <div class="block-subtitle">Редактор заметок с тегами</div>
                 <div class="block-subtitle block-subtitle-small">Реализована возможность добавлять новые теги с помощью
-                    символа # , удалять и изменять готовые заметки.
+                    символа # , удалять и изменять готовые заметки .
                 </div>
                 <div class="block-link">
                     <span>Github</span>
@@ -215,8 +216,7 @@
                 </div>
                 <div class="block-subtitle"> Фильтр Авиабилетов с помощью controlled form </div>
                 <div class="block-subtitle block-subtitle-small">Реакт приложение без использования
-                    JavaScript-фреймворков . Из примечательного - сервер может ответить ошибкой . Приложение сортирует
-                    около 500 билетов и возвращает 5 самых подходящих .</div>
+                    JavaScript-фреймворков . Из примечательного - сервер может ответить ошибкой . </div>
                 <div class="block-link">
                     <span>Demo:</span>
                     <a href="https://silly-kalam-3df6a1.netlify.app/">https://silly-kalam-3df6a1.netlify.app/</a>
@@ -246,8 +246,6 @@
                     </div>
                 </div>
                 <div class="block-subtitle">Планировщик задач на React-Redux</div>
-                <div class="block-subtitle block-subtitle-small">Есть возможность добавить , удалить и изменить задачу.
-                </div>
                 <div class="block-link">
                     <span>Demo:</span>
                     <a
@@ -281,10 +279,8 @@
                         <span>Webpack</span>
                     </div>
                 </div>
-                <div class="block-subtitle">Небольшой чат , реализованный с помощью веб-сокетов и базы данных low-db
+                <div class="block-subtitle">Небольшой чат , реализованный с помощью веб-сокетов и базы данных low-db .
                 </div>
-                <div class="block-subtitle block-subtitle-small">Между клиентом и сервером устанавливается постоянное
-                    соединение и происходит обмен сообщениями. Присутствует возможность добавить аватарку.</div>
                 <div class="block-images">
                     <div class="block-image-container">
                         <div class="block-image-container-bg">
@@ -315,7 +311,7 @@
                 </div>
                 <div class="block-subtitle block-subtitle-small">React приложение для поиска
                     youtube-видео по ключевым словам, а также сохранения запросов
-                    поиска. </div>
+                    поиска . </div>
                 <div class="block-link">
                     <span>Demo:</span>
                     <a href="https://kind-boyd-3e1a21.netlify.app">https://kind-boyd-3e1a21.netlify.app</a>
@@ -352,8 +348,8 @@
                         <span>Html</span>
                     </div>
                 </div>
-                <div class="block-subtitle">Метрики Lighthouse привидены приведены для телефонов . Не удалось везде
-                    получить 100 баллов , из-за расширений .</div>
+                <div class="block-subtitle">Метрики Lighthouse приведены для телефонов . Из-за расширений , не удалось везде
+                    получить 100 баллов .</div>
                 <div class="block-link">
                     <span>Demo:</span>
                     <a
