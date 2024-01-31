@@ -40,9 +40,18 @@ a {
 }
 
 
+.main-title .main-title__localization ul{
+   padding-left: 0px;
+   margin-left: 0px ;
+}
+
+.main-title .main-title__localization p{
+    margin-left: 0px ;
+}
+
 .main-title__contacts {
     padding-bottom: 10px;
-    text-align: center;
+    
 }
 
 .main-title__contacts--responsive{
@@ -326,10 +335,6 @@ a {
         margin-left: 0px;
     }
 
-    .main-title__contacts--responsive label{
-
-    }
-
     .main-title {
         text-align: center;
         padding: 10px;
@@ -347,6 +352,7 @@ a {
 
     .main-title__localization {
         display: inline;
+   
     }
 
     .main-title__localization li{
@@ -355,8 +361,9 @@ a {
 
     .main-title__localization p {
         padding: 0px;
-
         margin-left: 0px;
+        display: none;
+       
     }
 
     .main-title ul {
