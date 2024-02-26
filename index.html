@@ -11,98 +11,6 @@
 </head>
 
 <body>
-    <script>
-        window.onload = () => {
-            const images = document.querySelectorAll('.block-image-container')
-            const mainTitle = document.querySelector('.main-title')
-
-            const onImageClick = (image) => {
-                image.classList.toggle('block-image-preview')
-            }
-            const checkMainTitle = () => {
-                const sY = window.window.scrollY;
-                if (sY > 0) {
-                    mainTitle.classList.add('main-title-sticky')
-                } else {
-                    mainTitle.classList.remove('main-title-sticky')
-                }
-            }
-
-            checkMainTitle()
-
-            images.forEach(image => {
-                image.addEventListener('click', onImageClick.bind(null, image.querySelector('.block-image-container-bg')))
-            })
-            window.onscroll = checkMainTitle
-
-            const miniChat = document.querySelector(".mini-chat");
-            const todo = document.querySelector(".todo")
-            const movieFinder = document.querySelector(".movie-finder")
-            const noteApp = document.querySelector(".note-app")
-            const youtube = document.querySelector(".youtube")
-            const ticketsFilter = document.querySelector(".skyori")
-            const homeSpan = document.querySelector(".home-span")
-
-            document.querySelector(".language-eng").addEventListener("click", () => {
-                document.querySelector(".language-eng").classList.add("current-lang")
-                document.querySelector(".language-ru").classList.remove("current-lang")
-
-                mainTitle.querySelector("span").innerText = "Projects";
-
-                miniChat.querySelector(".block-title").innerText = "Mini-chat"
-                miniChat.querySelector(".block-subtitle").innerText = "Simple chat implemented with WebSockets and low-db database ."
-
-                todo.querySelector(".block-subtitle").innerText = "Todo list impemented with React-Redux"
-
-                movieFinder.querySelector(".block-subtitle").innerText = "An example of working with movie db Api"
-                movieFinder.querySelector(".block-subtitle-small").innerText = "React application for searching movies and adding them to bookmarks ."
-
-                noteApp.querySelector(".block-subtitle").innerText = "Notes editor. "
-                noteApp.querySelector(".block-subtitle-small").innerText = "You can add new tags using the # symbol, delete and modify ready-made notes ."
-
-                youtube.querySelector(".block-subtitle").innerText = "You can login with any password"
-                youtube.querySelector(".block-subtitle-small").innerText = "React app for searching youtube videos by keywords, as well as saving the search query ."
-
-                ticketsFilter.querySelector(".block-subtitle").innerText = "Air Tickets filter using a controlled form"
-                ticketsFilter.querySelector(".block-subtitle-small").innerText = "React application without any JavaScript framework . Noteworthy - the server may respond with an error ."
-
-                homeSpan.querySelector(".block-subtitle").innerText = "Lighthouse metrics are shown for phones. Couldn't get 100 points everywhere because of extensions ."
-
-                document.querySelector(".second-title").querySelector('span').innerText = "Different types of landing pages"
-            })
-
-            document.querySelector(".language-ru").addEventListener("click", () => {
-                document.querySelector(".language-ru").classList.add("current-lang")
-                document.querySelector(".language-eng").classList.remove("current-lang")
-
-                mainTitle.querySelector("span").innerText = "Проекты";
-
-                miniChat.querySelector(".block-title").innerText = "Мини-чат"
-                miniChat.querySelector(".block-subtitle").innerText = "Небольшой чат , реализованный с помощью веб-сокетов и базы данных low-db ."
-
-                todo.querySelector(".block-subtitle").innerText = "Планировщик задач на React-Redux"
-
-                movieFinder.querySelector(".block-subtitle").innerText = "Пример работы с movie db Api"
-                movieFinder.querySelector(".block-subtitle-small").innerText = "Приложение на реакте для поиска фильмов и добавления их в избранные ."
-
-                noteApp.querySelector(".block-subtitle").innerText = "Редактор заметок с тегами"
-                noteApp.querySelector(".block-subtitle-small").innerText = "Реализована возможность добавлять новые теги с помощью символа # , удалять и изменять готовые заметки ."
-
-                youtube.querySelector(".block-subtitle").innerText = "Для логина подойдет любой пароль"
-                youtube.querySelector(".block-subtitle-small").innerText = "React приложение для поиска youtube-видео по ключевым словам , а также сохранения запросов поиска ."
-
-                ticketsFilter.querySelector(".block-subtitle").innerText = "Фильтр Авиабилетов с помощью controlled form"
-                ticketsFilter.querySelector(".block-subtitle-small").innerText = "Реакт приложение без использования JavaScript-фреймворков . Из примечательного - сервер может ответить ошибкой ."
-
-                homeSpan.querySelector(".block-subtitle").innerText = "Метрики Lighthouse приведены для телефонов . Из-за расширений , не удалось везде получить 100 баллов ."
-
-                document.querySelector(".second-title").querySelector('span').innerText = "Разного вида лендинги"
-            })
-
-        }
-
-    </script>
-
     <div class="wrapper">
 
         <div class="main-title">
@@ -131,7 +39,7 @@
         </div>
 
         <div class="projects">
-            <div class="block movie-finder">
+            <div class="block strata">
                 <div class="block-title">Strataimage
                     <div class="block-technologies">
                         <span>JavaScript</span>
@@ -169,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="block movie-finder">
+            <div class="block raznoobrazie">
                 <div class="block-title">RAZNOOBRAZIE
                     <div class="block-technologies">
                         <span>JavaScript</span>
@@ -408,7 +316,7 @@
 
         <div class="projects landing-projects">
             
-            <div class="block home-span">
+            <div class="block ">
                 <div class="block-title">Assistance in bankruptcy
                     <div class="block-technologies">
                         <span>Css</span>
@@ -520,6 +428,8 @@
 
         </div>
     </div>
+
+    <script src="./scripts.js"></script>
 </body>
 
 </html>
