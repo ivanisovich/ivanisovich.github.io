@@ -53,16 +53,13 @@ a {
 .main-title .main-title__localization ul{
    padding-left: 0px;
    margin-left: 0px ;
+   margin: 0;
 }
 
 .main-title .main-title__localization p{
     margin-left: 0px ;
 }
 
-.main-title__contacts {
-    padding-bottom: 10px;
-    
-}
 
 .main-title__contacts--responsive{
     display: none;
@@ -71,10 +68,6 @@ a {
 .main-title__contacts label {
     padding-top: 10px;
 
-}
-
-.main-title__contacts a {
-    margin-right: 20px;
 }
 
 .main-title span {
@@ -114,7 +107,7 @@ a {
 .main-title ul {
     list-style: none;
     margin-left: -30px;
-    max-height: 40px;
+
 }
 
 .main-title li {
@@ -381,6 +374,9 @@ a {
     .main-title__contacts {
         font-size: 12px;
     }
+    .main-title__localization{
+        font-size: 12px;
+    }
 
     .block-title {
         display: inline;
@@ -423,6 +419,7 @@ a {
     .main-title__contacts--responsive{
         display: block;
         padding-bottom: 13px;
+        font-size: 12px;
     }
     .main-title__contacts--responsive a{
         line-height: 40px;
@@ -442,13 +439,7 @@ a {
         text-align: center;
     }
 
-    .second-title span{
-        font-size: 16px;
-    }
-
-    .block-link a {
-        font-size: 12px;
-    }
+   
 
     .block-subtitle {
         padding-right: 10px;
