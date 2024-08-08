@@ -31,6 +31,7 @@ window.onload = () => {
   const youtube = document.querySelector(".youtube");
   const strata = document.querySelector(".strata");
   const raznoobrazie = document.querySelector(".raznoobrazie");
+  const arjs = document.querySelector("ar-js")
 
   document.querySelector(".language-eng").addEventListener("click", () => {
     document.querySelector(".language-eng").classList.add("current-lang");
@@ -68,6 +69,12 @@ window.onload = () => {
       "You can login with any password";
     youtube.querySelector(".block-subtitle-small").innerText =
       "React app for searching youtube videos by keywords, as well as saving the search query .";
+
+      youtube.querySelector(".block-subtitle").innerText =
+      "The gallery includes geolocation features that determine the user's position and display different sets of artworks as they move between predefined locations.";
+    youtube.querySelector(".block-subtitle-small").innerText =
+      "AR.js Gallery is an  virtual gallery that utilizes augmented reality to display artwork in a real-world environment.";
+
 
     document.querySelector(".second-title").querySelector("span").innerText =
       "Different types of landing pages";

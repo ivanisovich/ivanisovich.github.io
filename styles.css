@@ -318,6 +318,11 @@ a {
     object-fit: contain;
 }
 
+.ar-js .block-image-container{
+    width: fit-content;
+    height: 300px;
+}
+
 @media (max-width: 900px) {
     .wrapper {
         padding: 15px;
