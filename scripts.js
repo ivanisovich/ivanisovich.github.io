@@ -70,9 +70,9 @@ window.onload = () => {
     youtube.querySelector(".block-subtitle-small").innerText =
       "React app for searching youtube videos by keywords, as well as saving the search query .";
 
-      youtube.querySelector(".block-subtitle").innerText =
+      arjs.querySelector(".block-subtitle").innerText =
       "The gallery includes geolocation features that determine the user's position and display different sets of artworks as they move between predefined locations.";
-    youtube.querySelector(".block-subtitle-small").innerText =
+      arjs.querySelector(".block-subtitle-small").innerText =
       "AR.js Gallery is an  virtual gallery that utilizes augmented reality to display artwork in a real-world environment.";
 
 
