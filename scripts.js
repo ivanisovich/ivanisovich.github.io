@@ -31,7 +31,7 @@ window.onload = () => {
   const youtube = document.querySelector(".youtube");
   const strata = document.querySelector(".strata");
   const raznoobrazie = document.querySelector(".raznoobrazie");
-  const arjs = document.querySelector("ar-js")
+  const arjs = document.querySelector(".arjs")
 
   document.querySelector(".language-eng").addEventListener("click", () => {
     document.querySelector(".language-eng").classList.add("current-lang");
