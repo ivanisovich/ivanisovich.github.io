@@ -31,7 +31,7 @@ window.onload = () => {
   const youtube = document.querySelector(".youtube");
   const strata = document.querySelector(".strata");
   const raznoobrazie = document.querySelector(".raznoobrazie");
-  const arjs = document.querySelector(".arjs")
+  const arjs = document.querySelector(".arjs");
 
   document.querySelector(".language-eng").addEventListener("click", () => {
     document.querySelector(".language-eng").classList.add("current-lang");
@@ -53,28 +53,22 @@ window.onload = () => {
     miniChat.querySelector(".block-subtitle").innerText =
       "Simple chat implemented with WebSockets and low-db database .";
 
-    todo.querySelector(".block-subtitle").innerText =
-      "Todo list impemented with React-Redux";
 
     movieFinder.querySelector(".block-subtitle").innerText =
       "An example of working with movie db Api";
     movieFinder.querySelector(".block-subtitle-small").innerText =
       "React application for searching movies and adding them to bookmarks .";
 
-    noteApp.querySelector(".block-subtitle").innerText = "Notes editor. ";
-    noteApp.querySelector(".block-subtitle-small").innerText =
-      "You can add new tags using the # symbol, delete and modify ready-made notes .";
 
     youtube.querySelector(".block-subtitle").innerText =
       "You can login with any password";
     youtube.querySelector(".block-subtitle-small").innerText =
       "React app for searching youtube videos by keywords, as well as saving the search query .";
 
-      arjs.querySelector(".block-subtitle").innerText =
+    arjs.querySelector(".block-subtitle").innerText =
       "The gallery includes geolocation features that determine the user's position and display different sets of artworks as they move between predefined locations.";
-      arjs.querySelector(".block-subtitle-small").innerText =
+    arjs.querySelector(".block-subtitle-small").innerText =
       "AR.js Gallery is an  virtual gallery that utilizes augmented reality to display artwork in a real-world environment.";
-
 
     document.querySelector(".second-title").querySelector("span").innerText =
       "Different types of landing pages";
