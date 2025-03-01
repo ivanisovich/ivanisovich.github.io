@@ -32,7 +32,8 @@ window.onload = () => {
   const strata = document.querySelector(".strata");
   const raznoobrazie = document.querySelector(".raznoobrazie");
   const arjs = document.querySelector(".arjs");
-
+  const iqtest = document.querySelector(".iqtest")
+  const tollroad = document.querySelector(".tollroad")
   document.querySelector(".language-eng").addEventListener("click", () => {
     document.querySelector(".language-eng").classList.add("current-lang");
     document.querySelector(".language-ru").classList.remove("current-lang");
@@ -70,6 +71,14 @@ window.onload = () => {
     arjs.querySelector(".block-subtitle-small").innerText =
       "AR.js Gallery is an  virtual gallery that utilizes augmented reality to display artwork in a real-world environment.";
 
+    tollroad.querySelector(".block-subtitle").innerText =
+    "The application is an online store selling vignettes, a common form of payment for motorway tolls in Europe.";
+    tollroad.querySelector(".block-subtitle-small").innerText =
+    "There is a built-in online payment system, as well as a function for tracking order status in the admin panel.";
+
+
+    iqtest.querySelector(".block-subtitle").innerText =
+    "The application is designed for conducting IQ testing with automatic calculation of results and generation of detailed reports.";
     document.querySelector(".second-title").querySelector("span").innerText =
       "Different types of landing pages";
   });
