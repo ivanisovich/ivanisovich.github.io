@@ -25,9 +25,7 @@ window.onload = () => {
   window.onscroll = checkMainTitle;
 
   const miniChat = document.querySelector(".mini-chat");
-  const todo = document.querySelector(".todo");
   const movieFinder = document.querySelector(".movie-finder");
-  const noteApp = document.querySelector(".note-app");
   const youtube = document.querySelector(".youtube");
   const strata = document.querySelector(".strata");
   const raznoobrazie = document.querySelector(".raznoobrazie");
@@ -50,21 +48,6 @@ window.onload = () => {
     raznoobrazie.querySelector(".block-subtitle-small").innerText =
       "Written without using libraries";
 
-    miniChat.querySelector(".block-title").innerText = "Mini-chat";
-    miniChat.querySelector(".block-subtitle").innerText =
-      "Simple chat implemented with WebSockets and low-db database .";
-
-
-    movieFinder.querySelector(".block-subtitle").innerText =
-      "An example of working with movie db Api";
-    movieFinder.querySelector(".block-subtitle-small").innerText =
-      "React application for searching movies and adding them to bookmarks .";
-
-
-    youtube.querySelector(".block-subtitle").innerText =
-      "You can login with any password";
-    youtube.querySelector(".block-subtitle-small").innerText =
-      "React app for searching youtube videos by keywords, as well as saving the search query .";
 
     arjs.querySelector(".block-subtitle").innerText =
       "The gallery includes geolocation features that determine the user's position and display different sets of artworks as they move between predefined locations.";
