@@ -31,6 +31,8 @@ window.onload = () => {
   const raznoobrazie = document.querySelector(".raznoobrazie");
   const arjs = document.querySelector(".arjs");
   const iqtest = document.querySelector(".iqtest")
+  const ebikes = document.querySelector(".ebikes");
+
   const tollroad = document.querySelector(".tollroad")
   document.querySelector(".language-eng").addEventListener("click", () => {
     document.querySelector(".language-eng").classList.add("current-lang");
@@ -47,7 +49,12 @@ window.onload = () => {
       "Animation-rich site in avant-garde style";
     raznoobrazie.querySelector(".block-subtitle-small").innerText =
       "Written without using libraries";
-
+      ebikes.querySelector(".block-subtitle").innerText =
+      "Online store of electric bicycles with delivery across Almaty and Kazakhstan.";
+    
+    ebikes.querySelector(".block-subtitle-small").innerText =
+      "Integrated payment system, product filtering, and an admin panel for inventory management.";
+    
 
     arjs.querySelector(".block-subtitle").innerText =
       "The gallery includes geolocation features that determine the user's position and display different sets of artworks as they move between predefined locations.";
