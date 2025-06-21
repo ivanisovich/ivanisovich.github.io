@@ -1,422 +1,1042 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 
 <head>
-  <title>Работы</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,500&display=swap"
-    rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио - Веб-разработчик</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="./favicon.png" />
+
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --accent-color: #3b82f6;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --text-light: #9ca3af;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-dark: #0f172a;
+      --border-color: #e5e7eb;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    /* Header Styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .header.scrolled {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: var(--secondary-color);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-color);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .language-switcher {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 0.25rem;
+    }
+
+    .lang-btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-weight: 500;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      text-align: center;
+    }
+
+    .hero-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .hero-contact {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item:hover {
+      color: var(--primary-color);
+    }
+
+    /* Main Content */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section {
+      margin-bottom: 6rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+
+    /* Project Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-primary);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .project-image {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .project-image img,
+    .project-image video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .project-image:hover img,
+    .project-image:hover video {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .project-description {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .project-link:hover {
+      background: var(--secondary-color);
+    }
+
+    .project-link.secondary {
+      background: transparent;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+    }
+
+    .project-link.secondary:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .modal-content img,
+    .modal-content video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-dark);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .footer-subtitle {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--accent-color);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-contact {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .main {
+        padding: 2rem 1rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .project-card {
+        margin: 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .modal-close {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-links {
+        flex-direction: column;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* Scroll animations */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="main-title">
-      <div class="container">
-        <div class="main-title__localization">
-          <ul>
-            <li class="language-ru current-lang">ru</li>
-            <li class="language-eng">eng</li>
-          </ul>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="#" class="logo">Портфолио</a>
+      <nav class="nav-links">
+        <a href="https://github.com/ivanisovich" class="nav-link" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
         </div>
+      </nav>
+    </div>
+  </header>
 
-        <span> Проекты </span>
-
-        <div class="main-title__contacts">
-          <a href="https://github.com/ivanisovich">github.com/ivanisovich</a>
-          <label>ivanisovich@yandex.ru</label>
-        </div>
-
-        <div class="main-title__contacts--responsive">
-          <a href="https://github.com/ivanisovich">Git</a>
-          <label>ivanisovich@ya.ru</label>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <h1 class="hero-title">Привет, я Иван</h1>
+      <p class="hero-subtitle">Веб-разработчик, создающий адаптивные сайты, интерфейсы и лэндинги с вниманием к деталям
+      </p>
+      <div class="hero-contact fade-in-up">
+        <a href="https://github.com/ivanisovich" class="contact-item" target="_blank">
+          <i class="fab fa-github"></i>
+          github.com/ivanisovich
+        </a>
+        <a href="mailto:ivanisovich@yandex.ru" class="contact-item">
+          <i class="fas fa-envelope"></i>
+          ivanisovich@yandex.ru
+        </a>
       </div>
     </div>
+  </section>
 
-    <div class="projects">
-      <div class="block tollroad">
-        <div class="block-title">
-          Tollroad
-          <div class="block-technologies">
-            <span>Vue.js</span>
-            <span>Node.js</span>
-            <span>Tailwind</span>
-          </div>
-        </div>
-        <div class="block-subtitle">
-          Интернет-магазин по продаже виньеток – распространенная форма оплаты за проезд
-          по автомагистралям в Европе.
-        </div>
-        <div class="block-subtitle block-subtitle-small">
-          Встроена система онлайн-оплаты , а также функция отслеживания статуса заказа в админ панели.
-        </div>
-        <div class="block-link">
-          <span>Link:</span>
-          <a href="http://tollroad.online/">http://tollroad.online/</a>
-        </div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/tollroad/1.webp" alt="">
-            </div>
-          </div>
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/tollroad/2.webp" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block ebikes">
-        <div class="block-title">
-          EBikes.kz
-          <div class="block-technologies">
-            <span>Vue.js</span>
-            <span>Node.js</span>
-            <span>Tailwind</span>
-          </div>
-        </div>
-        <div class="block-subtitle">
-          Онлайн-магазин электровелосипедов с доставкой по Алматы и другим регионам Казахстана.
-        </div>
-        <div class="block-subtitle block-subtitle-small">
-          Интеграция с платежной системой, фильтрация по характеристикам и удобная админ-панель для управления товарами.
-        </div>
-
-        
-        <div class="block-link">
-          <span>Github:</span>
-          <a href="https://github.com/ivanisovich/e-bikes">https://github.com/ivanisovich/e-bikes</a>
-        </div>
-        <div class="block-link">
-          <span>Link:</span>
-          <a href="https://ebikes.kz/">https://ebikes.kz/</a>
-        </div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/ebikes/ebikes.webp" alt="EBikes.kz screenshot 1">
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="block iqtest">
-        <div class="block-title">
-          IqTest Guru
-          <div class="block-technologies">
-            <span>Vue.js</span>
-            <span>Node.js</span>
-            <span>Tailwind</span>
-          </div>
-        </div>
-        <div class="block-subtitle">
-          Приложение предназначено для проведения IQ тестирования с автоматическим подсчетом результатов и генерацией
-          подробных отчетов.
-        </div>
-        <div class="block-link">
-          <span>Link:</span>
-          <a href="https://iqtest.guru/">https://iqtest.guru/</a>
-        </div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/iqtest/1.webp" alt="">
-            </div>
-          </div>
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/iqtest/2.webp" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block arjs">
-        <div class="block-title">
-          AR js Gallery
-          <div class="block-technologies">
-            <span>JavaScript</span>
-            <span>AR.js</span>
-            <span>Css</span>
-            <span>Html</span>
-          </div>
-        </div>
-        <div class="block-subtitle">
-          AR.js Галерея — это виртуальная галерея, использующая технологию дополненной реальности для отображения произведений искусства в реальном мире. 
-        </div>
-        <div class="block-subtitle block-subtitle-small">
-          Галерея включает функции геолокации, определяющие положение пользователя и отображающие различные наборы произведений искусства по мере его перемещения между заданными локациями.
-        </div>
-       
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <video autoplay muted controls src="./images/arjs/ar.mp4"></video>
-            </div>
-          </div>
-         
-        </div>
-      </div>
-      <div class="block strata">
-        <div class="block-title">
-          Strataimage
-          <div class="block-technologies">
-            <span>JavaScript</span>
-            <span>Node.js</span>
-            <span>MapboxGl</span>
-            <span>Ejs</span>
-            <span>Css</span>
-            <span>Html</span>
-          </div>
-        </div>
-        <div class="block-subtitle">
-          Корпоративный сайт с интерактивной картой и админ панелью
-        </div>
-        <div class="block-subtitle block-subtitle-small">
-          В админ панели можно редактировать метки на карте, загружать их
-          непосредственно из kmz файлов с геоданными, редактировать контент на
-          странице.
-        </div>
-        <div class="block-link">
-          <span>Link:</span>
-          <a href="https://strataimage.netlify.app/">https://strataimage.netlify.app/</a>
-        </div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/strata/2.png" />
-            </div>
-          </div>
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/strata/1.png" />
-            </div>
-          </div>
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/strata/3.png" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block raznoobrazie">
-        <div class="block-title">
-          RAZNOOBRAZIE
-          <div class="block-technologies">
-            <span>JavaScript</span>
-            <span>LootieFiles</span>
-            <span>SVG</span>
-            <span>Css</span>
-            <span>Html</span>
-          </div>
-        </div>
-        <div class="block-subtitle">
-          Насыщенный анимацией сайт в стиле авангард
-        </div>
-        <div class="block-subtitle block-subtitle-small">
-          Написан без использования библиотек
-        </div>
-        <div class="block-link">
-          <span>Link:</span>
-          <a href="https://raznoobrazie.netlify.app/">https://raznoobrazie.netlify.app/</a>
-        </div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/raznoobrazie/321.png" />
-            </div>
-          </div>
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/raznoobrazie/123.jpg" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-    
-
-
-    
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Featured Projects -->
+    <section class="section">
+      <h2 class="section-title scroll-reveal" data-ru="Основные проекты" data-en="Featured Projects">Основные проекты
+      </h2>
+      <div class="projects-grid">
+        <article  class="chester project-card scroll-reveal">
+  <div class="project-image" onclick="openModal('./images/chester/1.png')">
+    <img src="./images/chester/1.png" alt="Chester project screenshot">
+  </div>
+  <div class="project-content">
+    <h3 class="project-title">Chester Detailing</h3>
+    <p class="project-description"
+      data-ru="Сайт студии детейлинга с формой заявок, административной панелью и уведомлениями в Telegram. Админка позволяет управлять заказами, контентом и интеграцией с ботом."
+      data-en="A detailing studio website with order forms, admin panel, and Telegram notifications. Admin panel allows managing orders, content, and bot integration.">
+      Сайт студии детейлинга с формой заявок, административной панелью и уведомлениями в Telegram. Админка позволяет управлять заказами, контентом и интеграцией с ботом.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Vue.js</span>
+      <span class="tech-tag">Node.js</span>
+      <span class="tech-tag">Tailwind</span>
+      <span class="tech-tag">Telegram API</span>
     </div>
-
-    <!---------------------------------------------------------------------------------------------------------------------->
-
-    <div class="second-title">
-      <span>Разного вида лендинги</span>
-    </div>
-
-    <div class="projects landing-projects">
-      <div class="block">
-        <div class="block-title">
-          Soberis
-          <div class="block-technologies">
-            <span>Css</span>
-            <span>Html</span>
-            <span>JavaScript</span>
-            <span>SVG</span>
-          </div>
-        </div>
-
-        <div class="block-link">
-          <span>Demo:</span>
-          <a href="https://soberis.netlify.app/">https://soberis.netlify.app/</a>
-        </div>
-        <div class="block-link">
-          <span>Github</span>
-          <a href="https://github.com/ivanisovich/soberis">https://github.com/ivanisovich/soberis</a>
-        </div>
-        <div class="block-subtitle block-subtitle-small"></div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/soberis/Frame 740.png" />
-            </div>
-          </div>
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/soberis/Frame 735.png" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-title">
-          Hand Make
-          <div class="block-technologies">
-            <span>Css</span>
-            <span>Html</span>
-            <span>JavaScript</span>
-          </div>
-        </div>
-
-        <div class="block-link">
-          <span>Demo:</span>
-          <a href="https://hand-make.com/">https://hand-make.com/</a>
-        </div>
-        <div class="block-link">
-          <span>Github</span>
-          <a href="https://github.com/ivanisovich/hand-made">https://github.com/ivanisovich/hand-made</a>
-        </div>
-        <div class="block-subtitle block-subtitle-small"></div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/hmake/hand-make.png" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-title">
-          Salem Kazakhstan
-          <div class="block-technologies">
-            <span>Css</span>
-            <span>Html</span>
-            <span>Locofy</span>
-          </div>
-        </div>
-
-        <div class="block-link">
-          <span>Demo:</span>
-          <a href="https://salemkazakhstan.netlify.app/">https://salemkazakhstan.netlify.app/</a>
-        </div>
-        <div class="block-link">
-          <span>Github</span>
-          <a href="https://github.com/ivanisovich/salem">https://github.com/ivanisovich/salem</a>
-        </div>
-        <div class="block-subtitle block-subtitle-small"></div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/salem/salem.webp" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <div class="block">
-        <div class="block-title">
-          Era Logistic
-          <div class="block-technologies">
-            <span>Css</span>
-            <span>Html</span>
-          </div>
-        </div>
-
-        <div class="block-link">
-          <span>Demo:</span>
-          <a href="http:/negabarit24.ru/">http://negabarit24.ru/</a>
-        </div>
-    
-        <div class="block-subtitle block-subtitle-small"></div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/eralog/era.webp" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="block-title">
-          Assistance in bankruptcy
-          <div class="block-technologies">
-            <span>Css</span>
-            <span>Html</span>
-          </div>
-        </div>
-
-        <div class="block-link">
-          <span>Demo:</span>
-          <a href="http://advocatemoscow.online/">http://advocatemoscow.online/</a>
-        </div>
-        <div class="block-link">
-          <span>Github</span>
-          <a href="https://github.com/ivanisovich/bankruptcy">https://github.com/ivanisovich/bankruptcy</a>
-        </div>
-        <div class="block-subtitle block-subtitle-small"></div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/bankruptcy/Frame 3.jpg" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block beats">
-        <div class="block-title">
-          Beats Studio Buds
-          <div class="block-technologies">
-            <span>JavaScript</span>
-            <span>Css</span>
-            <span>Html</span>
-          </div>
-        </div>
-        <div class="block-link">
-          <span>Demo:</span>
-          <a href="https://beats-studio-buds.netlify.app/">https://beats-studio-buds.netlify.app/</a>
-        </div>
-        <div class="block-subtitle block-subtitle-small"></div>
-        <div class="block-images">
-          <div class="block-image-container">
-            <div class="block-image-container-bg">
-              <img src="./images/beats/beats.jpg" />
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="project-links">
+      <a href="https://chester-detailing.kz/" class="project-link" target="_blank">
+        <i class="fas fa-external-link-alt"></i>
+        <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
+      </a>
     </div>
   </div>
+</article>
+        <!-- Tollroad Project -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/tollroad/1.webp')">
+            <img src="./images/tollroad/1.webp" alt="Tollroad project screenshot">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Tollroad</h3>
+            <p class="project-description"
+              data-ru="Интернет-магазин по продаже виньеток – распространенная форма оплаты за проезд по автомагистралям в Европе. Встроена система онлайн-оплаты и функция отслеживания статуса заказа в админ панели."
+              data-en="Online store for selling vignettes, a common form of payment for motorway tolls in Europe. Built-in online payment system and order status tracking function in the admin panel.">
+              Интернет-магазин по продаже виньеток – распространенная форма оплаты за проезд по автомагистралям в
+              Европе. Встроена система онлайн-оплаты и функция отслеживания статуса заказа в админ панели.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Tailwind</span>
+            </div>
+            <div class="project-links">
+              <a href="http://tollroad.online/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
+              </a>
+            </div>
+          </div>
+        </article>
 
-  <script src="./scripts.js"></script>
+        <!-- EBikes Project -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/ebikes/ebikes.webp')">
+            <img src="./images/ebikes/ebikes.webp" alt="EBikes.kz project screenshot">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">EBikes.kz</h3>
+            <p class="project-description"
+              data-ru="Онлайн-магазин электровелосипедов с доставкой по Алматы и другим регионам Казахстана. Интеграция с платежной системой, фильтрация по характеристикам и удобная админ-панель для управления товарами."
+              data-en="Online store of electric bicycles with delivery across Almaty and Kazakhstan. Integrated payment system, product filtering, and an admin panel for inventory management.">
+              Онлайн-магазин электровелосипедов с доставкой по Алматы и другим регионам Казахстана. Интеграция с
+              платежной системой, фильтрация по характеристикам и удобная админ-панель для управления товарами.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Tailwind</span>
+            </div>
+            <div class="project-links">
+              <a href="https://ebikes.kz/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
+              </a>
+              <a href="https://github.com/ivanisovich/e-bikes" class="project-link secondary" target="_blank">
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- IQ Test Project -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/iqtest/1.webp')">
+            <img src="./images/iqtest/1.webp" alt="IQ Test project screenshot">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">IqTest Guru</h3>
+            <p class="project-description"
+              data-ru="Приложение предназначено для проведения IQ тестирования с автоматическим подсчетом результатов и генерацией подробных отчетов."
+              data-en="The application is designed for conducting IQ testing with automatic calculation of results and generation of detailed reports.">
+              Приложение предназначено для проведения IQ тестирования с автоматическим подсчетом результатов и
+              генерацией подробных отчетов.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Tailwind</span>
+            </div>
+            <div class="project-links">
+              <a href="https://iqtest.guru/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- AR.js Gallery Project -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/arjs/ar.mp4')">
+            <video muted loop>
+              <source src="./images/arjs/ar.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">AR.js Gallery</h3>
+            <p class="project-description"
+              data-ru="AR.js Галерея — это виртуальная галерея, использующая технологию дополненной реальности для отображения произведений искусства в реальном мире. Галерея включает функции геолокации, определяющие положение пользователя и отображающие различные наборы произведений искусства по мере его перемещения между заданными локациями."
+              data-en="AR.js Gallery is a virtual gallery that utilizes augmented reality to display artwork in a real-world environment. The gallery includes geolocation features that determine the user's position and display different sets of artworks as they move between predefined locations.">
+              AR.js Галерея — это виртуальная галерея, использующая технологию дополненной реальности для отображения
+              произведений искусства в реальном мире. Галерея включает функции геолокации, определяющие положение
+              пользователя и отображающие различные наборы произведений искусства по мере его перемещения между
+              заданными локациями.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">AR.js</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">HTML</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Strataimage Project -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/strata/2.png')">
+            <img src="./images/strata/2.png" alt="Strataimage project screenshot">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Strataimage</h3>
+            <p class="project-description"
+              data-ru="Корпоративный сайт с интерактивной картой и админ панелью. В админ панели можно редактировать метки на карте, загружать их непосредственно из kmz файлов с геоданными, редактировать контент на странице."
+              data-en="Corporate website with an interactive map and admin panel. In the admin panel you can edit markers on the map, load them directly from kmz files with geodata, and edit content on the page.">
+              Корпоративный сайт с интерактивной картой и админ панелью. В админ панели можно редактировать метки на
+              карте, загружать их непосредственно из kmz файлов с геоданными, редактировать контент на странице.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MapboxGL</span>
+              <span class="tech-tag">EJS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://strataimage.netlify.app/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- RAZNOOBRAZIE Project -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/raznoobrazie/321.png')">
+            <img src="./images/raznoobrazie/321.png" alt="RAZNOOBRAZIE project screenshot">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">RAZNOOBRAZIE</h3>
+            <p class="project-description"
+              data-ru="Насыщенный анимацией сайт в стиле авангард. Написан без использования библиотек."
+              data-en="Animation-rich site in avant-garde style. Written without using libraries.">
+              Насыщенный анимацией сайт в стиле авангард. Написан без использования библиотек.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">LottieFiles</span>
+              <span class="tech-tag">SVG</span>
+              <span class="tech-tag">CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://raznoobrazie.netlify.app/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Landing Pages Section -->
+    <section class="section">
+      <h2 class="section-title scroll-reveal" data-ru="Лендинги" data-en="Landing Pages">Лендинги</h2>
+      <div class="projects-grid">
+        <!-- Soberis -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/soberis/Frame 740.png')">
+            <img src="./images/soberis/Frame 740.png" alt="Soberis landing page">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Soberis</h3>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">SVG</span>
+            </div>
+            <div class="project-links">
+              <a href="https://soberis.netlify.app/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                Demo
+              </a>
+              <a href="https://github.com/ivanisovich/soberis" class="project-link secondary" target="_blank">
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hand Make -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/hmake/hand-make.png')">
+            <img src="./images/hmake/hand-make.png" alt="Hand Make landing page">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Hand Make</h3>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://hand-make.com/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                Demo
+              </a>
+              <a href="https://github.com/ivanisovich/hand-made" class="project-link secondary" target="_blank">
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Salem Kazakhstan -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/salem/salem.webp')">
+            <img src="./images/salem/salem.webp" alt="Salem Kazakhstan landing page">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Salem Kazakhstan</h3>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">Locofy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://salemkazakhstan.netlify.app/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                Demo
+              </a>
+              <a href="https://github.com/ivanisovich/salem" class="project-link secondary" target="_blank">
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Era Logistic -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/eralog/era.webp')">
+            <img src="./images/eralog/era.webp" alt="Era Logistic landing page">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Era Logistic</h3>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="http://negabarit24.ru/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bankruptcy -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/bankruptcy/Frame 3.jpg')">
+            <img src="./images/bankruptcy/Frame 3.jpg" alt="Bankruptcy assistance landing page">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title" data-ru="Помощь в банкротстве" data-en="Assistance in bankruptcy">Помощь в
+              банкротстве</h3>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="http://advocatemoscow.online/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                Demo
+              </a>
+              <a href="https://github.com/ivanisovich/bankruptcy" class="project-link secondary" target="_blank">
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Beats Studio Buds -->
+        <article class="project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/beats/beats.jpg')">
+            <img src="./images/beats/beats.jpg" alt="Beats Studio Buds landing page">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Beats Studio Buds</h3>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://beats-studio-buds.netlify.app/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h2 class="footer-title" data-ru="Готов к сотрудничеству" data-en="Ready for collaboration">Готов к сотрудничеству
+      </h2>
+      <p class="footer-subtitle" data-ru="Свяжитесь со мной для обсуждения вашего проекта"
+        data-en="Contact me to discuss your project">Свяжитесь со мной для обсуждения вашего проекта</p>
+      <div class="footer-links">
+        <a href="https://github.com/ivanisovich" class="footer-link" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="mailto:ivanisovich@yandex.ru" class="footer-link">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </div>
+      <p>&copy; 2024 Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Language switching functionality
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const elementsWithLang = document.querySelectorAll('[data-ru]');
+
+    let currentLang = 'ru';
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        if (lang !== currentLang) {
+          switchLanguage(lang);
+          updateActiveButton(btn);
+          currentLang = lang;
+        }
+      });
+    });
+
+    function switchLanguage(lang) {
+      elementsWithLang.forEach(element => {
+        const text = element.dataset[lang];
+        if (text) {
+          element.textContent = text;
+        }
+      });
+    }
+
+    function updateActiveButton(activeBtn) {
+      langButtons.forEach(btn => btn.classList.remove('active'));
+      activeBtn.classList.add('active');
+    }
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Modal functionality
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+
+    function openModal(src) {
+      const isVideo = src.includes('.mp4');
+
+      if (isVideo) {
+        modalContent.innerHTML = `<video controls autoplay><source src="${src}" type="video/mp4"></video>`;
+      } else {
+        modalContent.innerHTML = `<img src="${src}" alt="Project screenshot">`;
+      }
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      modalContent.innerHTML = '';
+    }
+
+    // Close modal on background click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-reveal elements
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

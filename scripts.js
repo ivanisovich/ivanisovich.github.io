@@ -32,7 +32,7 @@ window.onload = () => {
   const arjs = document.querySelector(".arjs");
   const iqtest = document.querySelector(".iqtest")
   const ebikes = document.querySelector(".ebikes");
-
+const chester = document.querySelector(".chester");
   const tollroad = document.querySelector(".tollroad")
   document.querySelector(".language-eng").addEventListener("click", () => {
     document.querySelector(".language-eng").classList.add("current-lang");
@@ -65,7 +65,10 @@ window.onload = () => {
     "The application is an online store selling vignettes, a common form of payment for motorway tolls in Europe.";
     tollroad.querySelector(".block-subtitle-small").innerText =
     "There is a built-in online payment system, as well as a function for tracking order status in the admin panel.";
-
+ chester.querySelector(".block-subtitle").innerText =
+    "Website for a detailing studio with an order form and admin panel.";
+  chester.querySelector(".block-subtitle-small").innerText =
+    "Includes Telegram bot integration for instant notifications and admin tools for managing services and orders.";
 
     iqtest.querySelector(".block-subtitle").innerText =
     "The application is designed for conducting IQ testing with automatic calculation of results and generation of detailed reports.";
