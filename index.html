@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Портфолио - Веб-разработчик</title>
+  <title data-ru="Портфолио - Веб-разработчик" data-en="Portfolio - Web Developer">Портфолио - Веб-разработчик</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="./favicon.png" />
@@ -513,12 +513,11 @@
 </head>
 
 <body>
-  <!-- Header -->
   <header class="header" id="header">
     <div class="header-container">
-      <a href="#" class="logo">Портфолио</a>
+      <a href="#" class="logo" data-ru="Портфолио" data-en="Portfolio">Портфолио</a>
       <nav class="nav-links">
-        <a href="https://github.com/ivanisovich" class="nav-link" target="_blank">
+        <a href="https://github.com/ivanisovich" class="nav-link" target="_blank" data-ru="GitHub" data-en="GitHub">
           <i class="fab fa-github"></i> GitHub
         </a>
         <div class="language-switcher">
@@ -529,11 +528,10 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-<section class="hero">
+  <section class="hero">
     <div class="hero-container">
-      <h1 class="hero-title">Привет, я Иван</h1>
-      <p class="hero-subtitle">Веб-разработчик, создающий адаптивные сайты, интерфейсы и лендинги с вниманием к деталям.</p>
+      <h1 class="hero-title" data-ru="Привет, я Иван" data-en="Hi, I'm Ivan">Привет, я Иван</h1>
+      <p class="hero-subtitle" data-ru="Веб-разработчик, создающий адаптивные сайты, интерфейсы и лендинги с вниманием к деталям." data-en="A web developer creating responsive websites, interfaces, and landing pages with attention to detail.">Веб-разработчик, создающий адаптивные сайты, интерфейсы и лендинги с вниманием к деталям.</p>
       <div class="hero-contact">
         <a href="https://github.com/ivanisovich" class="contact-item" target="_blank">
           <i class="fab fa-github"></i> github.com/ivanisovich
@@ -545,61 +543,57 @@
     </div>
   </section>
 
-  <!-- Main Content -->
   <main class="main">
-    
-  <!-- About Section -->
-<section class="section scroll-reveal">
-  <h2 class="section-title" data-ru="Обо мне" data-en="About Me">Обо мне</h2>
-  <div style="max-width: 800px; margin: 0 auto; font-size: 1.125rem; color: var(--text-secondary); line-height: 1.8;">
-    <p>
-      Я занимаюсь фронтенд-разработкой с 2020 года. Сейчас продолжаю прокачивать навыки и изучать архитектурные подходы в крупных проектах, 
-      но уже умею быстро и самостоятельно делать рабочие MVP с нуля.
-    </p>
-    <p style="margin-top: 1.5rem;">
-      За это время я создал десятки сайтов — от лэндингов до полноценных интернет-магазинов с фильтрацией, загрузкой товаров, админкой и оплатой. 
-      Настраивал серверы, SSL, Nginx, деплой, SEO-оптимизацию (sitemap, prerender, мета-теги) и подключал метрики / пиксели.
-    </p>
-    <p style="margin-top: 1.5rem;">
-      Использую Vue.js (2 и 3), Tailwind, Node.js, Express, MongoDB, а также Telegram API, Stripe / CloudPayments, и другие интеграции. 
-      Умею автоматизировать процессы с помощью простых скриптов и нейросетей.
-    </p>
-    <p style="margin-top: 1.5rem;">
-      Владею всем циклом запуска: от вёрстки и логики до хостинга и рекламы. Могу собрать сайт, поднять сервер, продумать структуру, запустить и продвигать.
-    </p>
-  </div>
-</section>
-    <!-- Featured Projects -->
+
+    <section class="section scroll-reveal">
+      <h2 class="section-title" data-ru="Обо мне" data-en="About Me">Обо мне</h2>
+      <div style="max-width: 800px; margin: 0 auto; font-size: 1.125rem; color: var(--text-secondary); line-height: 1.8;">
+        <p data-ru="Я занимаюсь фронтенд-разработкой с 2020 года. Сейчас продолжаю прокачивать навыки и изучать архитектурные подходы в крупных проектах, но уже умею быстро и самостоятельно делать рабочие MVP с нуля." data-en="I've been involved in frontend development since 2020. Currently, I'm enhancing my skills and studying architectural approaches in large-scale projects, but I can already quickly and independently build working MVPs from scratch.">
+          Я занимаюсь фронтенд-разработкой с 2020 года. Сейчас продолжаю прокачивать навыки и изучать архитектурные подходы в крупных проектах,
+          но уже умею быстро и самостоятельно делать рабочие MVP с нуля.
+        </p>
+        <p style="margin-top: 1.5rem;" data-ru="За это время я создал десятки сайтов — от лэндингов до полноценных интернет-магазинов с фильтрацией, загрузкой товаров, админкой и оплатой. Настраивал серверы, SSL, Nginx, деплой, SEO-оптимизацию (sitemap, prerender, мета-теги) и подключал метрики / пиксели." data-en="During this time, I've created dozens of websites — from landing pages to full-fledged online stores with filtering, product uploads, admin panels, and payment systems. I've configured servers, SSL, Nginx, deployment, SEO optimization (sitemap, prerender, meta tags), and integrated analytics/pixels.">
+          За это время я создал десятки сайтов — от лэндингов до полноценных интернет-магазинов с фильтрацией, загрузкой товаров, админкой и оплатой.
+          Настраивал серверы, SSL, Nginx, деплой, SEO-оптимизацию (sitemap, prerender, мета-теги) и подключал метрики / пиксели.
+        </p>
+        <p style="margin-top: 1.5rem;" data-ru="Использую Vue.js (2 и 3), Tailwind, Node.js, Express, MongoDB, а также Telegram API, Stripe / CloudPayments, и другие интеграции. Умею автоматизировать процессы с помощью простых скриптов и нейросетей." data-en="I use Vue.js (2 and 3), Tailwind, Node.js, Express, MongoDB, as well as Telegram API, Stripe / CloudPayments, and other integrations. I can automate processes using simple scripts and neural networks.">
+          Использую Vue.js (2 и 3), Tailwind, Node.js, Express, MongoDB, а также Telegram API, Stripe / CloudPayments, и другие интеграции.
+          Умею автоматизировать процессы с помощью простых скриптов и нейросетей.
+        </p>
+        <p style="margin-top: 1.5rem;" data-ru="Владею всем циклом запуска: от вёрстки и логики до хостинга и рекламы. Могу собрать сайт, поднять сервер, продумать структуру, запустить и продвигать." data-en="I'm proficient in the entire launch cycle: from layout and logic to hosting and advertising. I can build a website, set up a server, conceptualize the structure, launch, and promote it.">
+          Владею всем циклом запуска: от вёрстки и логики до хостинга и рекламы. Могу собрать сайт, поднять сервер, продумать структуру, запустить и продвигать.
+        </p>
+      </div>
+    </section>
     <section class="section">
       <h2 class="section-title scroll-reveal" data-ru="Основные проекты" data-en="Featured Projects">Основные проекты
       </h2>
       <div class="projects-grid">
-        <article  class="chester project-card scroll-reveal">
-  <div class="project-image" onclick="openModal('./images/chester/1.png')">
-    <img src="./images/chester/1.png" alt="Chester project screenshot">
-  </div>
-  <div class="project-content">
-    <h3 class="project-title">Chester Detailing</h3>
-    <p class="project-description"
-      data-ru="Сайт студии детейлинга с формой заявок, административной панелью и уведомлениями в Telegram. Админка позволяет управлять заказами, контентом и интеграцией с ботом."
-      data-en="A detailing studio website with order forms, admin panel, and Telegram notifications. Admin panel allows managing orders, content, and bot integration.">
-      Сайт студии детейлинга с формой заявок, административной панелью и уведомлениями в Telegram. Админка позволяет управлять заказами, контентом и интеграцией с ботом.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Vue.js</span>
-      <span class="tech-tag">Node.js</span>
-      <span class="tech-tag">Tailwind</span>
-      <span class="tech-tag">Telegram API</span>
-    </div>
-    <div class="project-links">
-      <a href="https://chester-detailing.kz/" class="project-link" target="_blank">
-        <i class="fas fa-external-link-alt"></i>
-        <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
-      </a>
-    </div>
-  </div>
-</article>
-        <!-- Tollroad Project -->
+        <article class="chester project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/chester/1.png')">
+            <img src="./images/chester/1.png" alt="Chester project screenshot">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Chester Detailing</h3>
+            <p class="project-description"
+              data-ru="Сайт студии детейлинга с формой заявок, административной панелью и уведомлениями в Telegram. Админка позволяет управлять заказами, контентом и интеграцией с ботом."
+              data-en="A detailing studio website with order forms, admin panel, and Telegram notifications. Admin panel allows managing orders, content, and bot integration.">
+              Сайт студии детейлинга с формой заявок, административной панелью и уведомлениями в Telegram. Админка позволяет управлять заказами, контентом и интеграцией с ботом.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Tailwind</span>
+              <span class="tech-tag">Telegram API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://chester-detailing.kz/" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
+              </a>
+            </div>
+          </div>
+        </article>
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/tollroad/1.webp')">
             <img src="./images/tollroad/1.webp" alt="Tollroad project screenshot">
@@ -626,7 +620,6 @@
           </div>
         </article>
 
-        <!-- EBikes Project -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/ebikes/ebikes.webp')">
             <img src="./images/ebikes/ebikes.webp" alt="EBikes.kz project screenshot">
@@ -657,7 +650,6 @@
           </div>
         </article>
 
-        <!-- IQ Test Project -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/iqtest/1.webp')">
             <img src="./images/iqtest/1.webp" alt="IQ Test project screenshot">
@@ -684,7 +676,6 @@
           </div>
         </article>
 
-        <!-- AR.js Gallery Project -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/arjs/ar.mp4')">
             <video muted loop>
@@ -710,7 +701,6 @@
           </div>
         </article>
 
-        <!-- Strataimage Project -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/strata/2.png')">
             <img src="./images/strata/2.png" alt="Strataimage project screenshot">
@@ -738,7 +728,6 @@
           </div>
         </article>
 
-        <!-- RAZNOOBRAZIE Project -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/raznoobrazie/321.png')">
             <img src="./images/raznoobrazie/321.png" alt="RAZNOOBRAZIE project screenshot">
@@ -767,11 +756,9 @@
       </div>
     </section>
 
-    <!-- Landing Pages Section -->
     <section class="section">
       <h2 class="section-title scroll-reveal" data-ru="Лендинги" data-en="Landing Pages">Лендинги</h2>
       <div class="projects-grid">
-        <!-- Soberis -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/soberis/Frame 740.png')">
             <img src="./images/soberis/Frame 740.png" alt="Soberis landing page">
@@ -787,7 +774,7 @@
             <div class="project-links">
               <a href="https://soberis.netlify.app/" class="project-link" target="_blank">
                 <i class="fas fa-external-link-alt"></i>
-                Demo
+                <span data-ru="Демо" data-en="Demo">Demo</span>
               </a>
               <a href="https://github.com/ivanisovich/soberis" class="project-link secondary" target="_blank">
                 <i class="fab fa-github"></i>
@@ -797,7 +784,6 @@
           </div>
         </article>
 
-        <!-- Hand Make -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/hmake/hand-make.png')">
             <img src="./images/hmake/hand-make.png" alt="Hand Make landing page">
@@ -812,7 +798,7 @@
             <div class="project-links">
               <a href="https://hand-make.com/" class="project-link" target="_blank">
                 <i class="fas fa-external-link-alt"></i>
-                Demo
+                <span data-ru="Демо" data-en="Demo">Demo</span>
               </a>
               <a href="https://github.com/ivanisovich/hand-made" class="project-link secondary" target="_blank">
                 <i class="fab fa-github"></i>
@@ -822,7 +808,6 @@
           </div>
         </article>
 
-        <!-- Salem Kazakhstan -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/salem/salem.webp')">
             <img src="./images/salem/salem.webp" alt="Salem Kazakhstan landing page">
@@ -837,7 +822,7 @@
             <div class="project-links">
               <a href="https://salemkazakhstan.netlify.app/" class="project-link" target="_blank">
                 <i class="fas fa-external-link-alt"></i>
-                Demo
+                <span data-ru="Демо" data-en="Demo">Demo</span>
               </a>
               <a href="https://github.com/ivanisovich/salem" class="project-link secondary" target="_blank">
                 <i class="fab fa-github"></i>
@@ -847,7 +832,6 @@
           </div>
         </article>
 
-        <!-- Era Logistic -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/eralog/era.webp')">
             <img src="./images/eralog/era.webp" alt="Era Logistic landing page">
@@ -861,13 +845,12 @@
             <div class="project-links">
               <a href="http://negabarit24.ru/" class="project-link" target="_blank">
                 <i class="fas fa-external-link-alt"></i>
-                Demo
+                <span data-ru="Демо" data-en="Demo">Demo</span>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- Bankruptcy -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/bankruptcy/Frame 3.jpg')">
             <img src="./images/bankruptcy/Frame 3.jpg" alt="Bankruptcy assistance landing page">
@@ -882,7 +865,7 @@
             <div class="project-links">
               <a href="http://advocatemoscow.online/" class="project-link" target="_blank">
                 <i class="fas fa-external-link-alt"></i>
-                Demo
+                <span data-ru="Демо" data-en="Demo">Demo</span>
               </a>
               <a href="https://github.com/ivanisovich/bankruptcy" class="project-link secondary" target="_blank">
                 <i class="fab fa-github"></i>
@@ -892,7 +875,6 @@
           </div>
         </article>
 
-        <!-- Beats Studio Buds -->
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/beats/beats.jpg')">
             <img src="./images/beats/beats.jpg" alt="Beats Studio Buds landing page">
@@ -907,7 +889,7 @@
             <div class="project-links">
               <a href="https://beats-studio-buds.netlify.app/" class="project-link" target="_blank">
                 <i class="fas fa-external-link-alt"></i>
-                Demo
+                <span data-ru="Демо" data-en="Demo">Demo</span>
               </a>
             </div>
           </div>
@@ -916,7 +898,6 @@
     </section>
   </main>
 
-  <!-- Modal -->
   <div class="modal" id="modal">
     <button class="modal-close" onclick="closeModal()">
       <i class="fas fa-times"></i>
@@ -924,10 +905,9 @@
     <div class="modal-content" id="modal-content"></div>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <h2 class="footer-title" data-ru="Готов к сотрудничеству" data-en="Ready for collaboration">Готов к сотрудничеству
+      <h2 class="footer-title" data-ru="Готов к сотрудничеству" data-en="Ready for Collaboration">Готов к сотрудничеству
       </h2>
       <p class="footer-subtitle" data-ru="Свяжитесь со мной для обсуждения вашего проекта"
         data-en="Contact me to discuss your project">Свяжитесь со мной для обсуждения вашего проекта</p>
@@ -939,16 +919,27 @@
           <i class="fas fa-envelope"></i> Email
         </a>
       </div>
-      <p>&copy; 2024 Portfolio. All rights reserved.</p>
+      <p>&copy; <span data-ru="2024 Портфолио. Все права защищены." data-en="2024 Portfolio. All rights reserved.">2024 Портфолио. Все права защищены.</span></p>
     </div>
   </footer>
 
   <script>
     // Language switching functionality
     const langButtons = document.querySelectorAll('.lang-btn');
-    const elementsWithLang = document.querySelectorAll('[data-ru]');
+    const elementsWithLang = document.querySelectorAll('[data-ru]'); // Select all elements that have a data-ru attribute
 
-    let currentLang = 'ru';
+    let currentLang = 'ru'; // Initialize with Russian as default
+
+    // Set initial language based on active button or default
+    const initialActiveButton = document.querySelector('.lang-btn.active');
+    if (initialActiveButton) {
+      currentLang = initialActiveButton.dataset.lang;
+    }
+    // Apply initial translation if not Russian
+    if (currentLang !== 'ru') {
+      switchLanguage(currentLang);
+    }
+
 
     langButtons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -957,6 +948,7 @@
           switchLanguage(lang);
           updateActiveButton(btn);
           currentLang = lang;
+          document.documentElement.lang = lang; // Update the html lang attribute
         }
       });
     });
@@ -994,19 +986,19 @@
       const isVideo = src.includes('.mp4');
 
       if (isVideo) {
-        modalContent.innerHTML = `<video controls autoplay><source src="${src}" type="video/mp4"></video>`;
+        modalContent.innerHTML = `<video controls autoplay loop><source src="${src}" type="video/mp4"></video>`;
       } else {
         modalContent.innerHTML = `<img src="${src}" alt="Project screenshot">`;
       }
 
       modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
     }
 
     function closeModal() {
       modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-      modalContent.innerHTML = '';
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+      modalContent.innerHTML = ''; // Clear modal content
     }
 
     // Close modal on background click
