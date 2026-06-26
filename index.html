@@ -569,6 +569,29 @@
       <h2 class="section-title scroll-reveal" data-ru="Основные проекты" data-en="Featured Projects">Основные проекты
       </h2>
       <div class="projects-grid">
+          <article class="ati-automation project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/ati-automation/1.png')">
+            <img src="./images/ati-automation/1.jpg" alt="ATI Automation Service screenshot" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500'">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">ATI Sync Engine</h3>
+            <p class="project-description"
+              data-ru="Автоматизированный сервис (мидлвар) для парсинга, агрегации и синхронизации грузов между закрытыми логистическими платформами (Atrucks, Loginet, TorgTrans, Камкабель, Holdcable) и биржей ATI.su. Интегрирован с DeepSeek API для ИИ-анализа сырых адресов, поддерживает синхронизацию кук через кастомное расширение и полностью автоматизирует жизненный цикл заявок (автовыгрузка новых и автоудаление закрытых лотов)."
+              data-en="An automated integration service (middleware) for parsing, aggregating, and synchronizing freight data between private logistics platforms (Atrucks, Loginet, TorgTrans, Kamkabel, Holdcable) and the ATI.su exchange. Integrated with DeepSeek API for AI-powered parsing of raw addresses, it supports cookie sync via a custom browser extension and fully automates the cargo lifecycle (auto-publishing new lots and auto-deleting expired ones).">
+              Автоматизированный сервис (мидлвар) для парсинга, агрегации и синхронизации грузов между закрытыми логистическими платформами (Atrucks, Loginet, TorgTrans, Камкабель, Holdcable) и биржей ATI.su. Интегрирован с DeepSeek API для ИИ-анализа сырых адресов, поддерживает синхронизацию кук через кастомное расширение и полностью автоматизирует жизненный цикл заявок (автовыгрузка новых и автоудаление закрытых лотов).
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">DeepSeek API</span>
+              <span class="tech-tag">Vue</span>
+              <span class="tech-tag">Cheerio</span>
+           
+            </div>
+            <div class="project-links">
+              </div>
+          </div>
+        </article>
         <article class="chester project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/chester/1.png')">
             <img src="./images/chester/1.png" alt="Chester project screenshot">
@@ -594,35 +617,11 @@
             </div>
           </div>
         </article>
-        <!-- <article class="project-card scroll-reveal">
-          <div class="project-image" onclick="openModal('./images/tollroad/1.webp')">
-            <img src="./images/tollroad/1.webp" alt="Tollroad project screenshot">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Tollroad</h3>
-            <p class="project-description"
-              data-ru="Интернет-магазин по продаже виньеток – распространенная форма оплаты за проезд по автомагистралям в Европе. Встроена система онлайн-оплаты и функция отслеживания статуса заказа в админ панели."
-              data-en="Online store for selling vignettes, a common form of payment for motorway tolls in Europe. Built-in online payment system and order status tracking function in the admin panel.">
-              Интернет-магазин по продаже виньеток – распространенная форма оплаты за проезд по автомагистралям в
-              Европе. Встроена система онлайн-оплаты и функция отслеживания статуса заказа в админ панели.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Tailwind</span>
-            </div>
-            <div class="project-links">
-              <a href="http://tollroad.online/" class="project-link" target="_blank">
-                <i class="fas fa-external-link-alt"></i>
-                <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
-              </a>
-            </div>
-          </div>
-        </article> -->
+        
 
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/ebikes/ebikes.webp')">
-            <img src="./images/ebikes/ebikes.webp" alt="EBikes.kz project screenshot">
+            <img style="object-position: top;" src="./images/ebikes/ebikes.webp" alt="EBikes.kz project screenshot">
           </div>
           <div class="project-content">
             <h3 class="project-title">EBikes.kz</h3>
@@ -649,32 +648,8 @@
             </div>
           </div>
         </article>
-
-        <!-- <article class="project-card scroll-reveal">
-          <div class="project-image" onclick="openModal('./images/iqtest/1.webp')">
-            <img src="./images/iqtest/1.webp" alt="IQ Test project screenshot">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">IqTest Guru</h3>
-            <p class="project-description"
-              data-ru="Приложение предназначено для проведения IQ тестирования с автоматическим подсчетом результатов и генерацией подробных отчетов."
-              data-en="The application is designed for conducting IQ testing with automatic calculation of results and generation of detailed reports.">
-              Приложение предназначено для проведения IQ тестирования с автоматическим подсчетом результатов и
-              генерацией подробных отчетов.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Tailwind</span>
-            </div>
-            <div class="project-links">
-              <a href="https://iqtest.guru/" class="project-link" target="_blank">
-                <i class="fas fa-external-link-alt"></i>
-                <span data-ru="Посмотреть" data-en="View Live">Посмотреть</span>
-              </a>
-            </div>
-          </div>
-        </article> -->
+      
+   
 
         <article class="project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/arjs/ar.mp4')">
