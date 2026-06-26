@@ -569,6 +569,28 @@
       <h2 class="section-title scroll-reveal" data-ru="Основные проекты" data-en="Featured Projects">Основные проекты
       </h2>
       <div class="projects-grid">
+        <article class="hft-sniper project-card scroll-reveal">
+          <div class="project-image" onclick="openModal('./images/hft-sniper/1.png')">
+            <img src="./images/hft-sniper/1.png" alt="Polymarket HFT Trading Framework" onerror="this.src='https://images.unsplash.com/photo-1642104704074-907c0698cbd9?w=500'">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Polymarket HFT Framework </h3>
+            <p class="project-description"
+              data-ru="Высокочастотная торговая инфраструктура полного цикла для бинарных опционов Polymarket (btc/eth-5m). Компоненты: 1) Торговая стратегия на базе логистической регрессии, фильтрации OBI/CVD и защиты от ложных пробоев Velocity Stalling Guard. 2) Высокоскоростное сетевое исполнение на Node.js с оптимизацией TCP (setNoDelay, keep-alive пул), отправкой REST IOC ордеров через смарт-контракты Safe-Proxy (Builder Code) и мгновенным трекингом статусов по веб-сокет каналу User WS. 3) Стриминговый коллектор телеметрии стаканов (JSONL, тикрейт 250мс) и симулятор бэктестов на readline для вычисления матриц ошибок и исключения негативного отбора ликвидности."
+              data-en="Full-cycle high-frequency trading infrastructure for Polymarket binary options (btc/eth-5m). Components: 1) Strategy utilizing logistic regression modeling, OBI/CVD volume metrics, and Velocity Stalling Guards against false impulses. 2) Production-grade Node.js execution engine with TCP socket optimization (setNoDelay, keep-alive pooling), proxy-safe REST IOC routing (Builder Code), and instant synchronization via private User WebSocket streams. 3) Non-blocking telemetry collector recording order books 4 times per second into JSONL storage alongside a stream-based backtester using the readline API to generate error cross-matrices and eliminate adverse selection.">
+              Высокочастотная торговая инфраструктура полного цикла для бинарных опционов Polymarket (btc/eth-5m). Компоненты: 1) Торговая стратегия на базе логистической регрессии, фильтрации OBI/CVD и защиты от ложных пробоев Velocity Stalling Guard. 2) Высокоскоростное сетевое исполнение на Node.js с оптимизацией TCP (setNoDelay, keep-alive пул), отправкой REST IOC ордеров через смарт-контракты Safe-Proxy (Builder Code) и мгновенным трекингом статусов по веб-сокет каналу User WS. 3) Стриминговый коллектор телеметрии стаканов (JSONL, тикрейт 250мс) и симулятор бэктестов на readline для вычисления матриц ошибок и исключения негативного отбора ликвидности.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Node.js Network</span>
+              <span class="tech-tag">ClobClient v2</span>
+              <span class="tech-tag">WebSockets / Stream</span>
+              <span class="tech-tag">JSONL Big Data</span>
+              <span class="tech-tag">Data Science</span>
+            </div>
+            <div class="project-links">
+            </div>
+          </div>
+        </article>
           <article class="ati-automation project-card scroll-reveal">
           <div class="project-image" onclick="openModal('./images/ati-automation/1.png')">
             <img src="./images/ati-automation/1.jpg" alt="ATI Automation Service screenshot" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500'">

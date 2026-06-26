@@ -5,10 +5,10 @@ window.onload = () => {
   const onImageClick = (image) => {
     image.classList.toggle("block-image-preview");
   };
-  
+
   const checkMainTitle = () => {
-    const sY = window.scrollY;
     if (mainTitle) {
+      const sY = window.scrollY;
       if (sY > 0) {
         mainTitle.classList.add("main-title-sticky");
       } else {
@@ -27,20 +27,13 @@ window.onload = () => {
   });
   window.onscroll = checkMainTitle;
 
-  // Селекторы старых проектов
-  const miniChat = document.querySelector(".mini-chat");
-  const movieFinder = document.querySelector(".movie-finder");
-  const youtube = document.querySelector(".youtube");
+  // Инициализация селекторов всех проектов
   const strata = document.querySelector(".strata");
   const raznoobrazie = document.querySelector(".raznoobrazie");
   const arjs = document.querySelector(".arjs");
-  const iqtest = document.querySelector(".iqtest");
   const ebikes = document.querySelector(".ebikes");
   const chester = document.querySelector(".chester");
-  const tollroad = document.querySelector(".tollroad");
-  
-  // Адаптация: Добавляем новый сервис автоматизации АТИ
-  const atiAutomation = document.querySelector(".ati-automation");
+  const hftSniper = document.querySelector(".hft-sniper");
 
   document.querySelector(".language-eng").addEventListener("click", () => {
     document.querySelector(".language-eng").classList.add("current-lang");
@@ -78,12 +71,7 @@ window.onload = () => {
         "AR.js Gallery is an virtual gallery that utilizes augmented reality to display artwork in a real-world environment.";
     }
 
-    if (tollroad) {
-      tollroad.querySelector(".block-subtitle").innerText =
-        "The application is an online store selling vignettes, a common form of payment for motorway tolls in Europe.";
-      tollroad.querySelector(".block-subtitle-small").innerText =
-        "There is a built-in online payment system, as well as a function for tracking order status in the admin panel.";
-    }
+   
 
     if (chester) {
       chester.querySelector(".block-subtitle").innerText =
@@ -92,15 +80,15 @@ window.onload = () => {
         "Includes Telegram bot integration for instant notifications and admin tools for managing services and orders.";
     }
 
-    if (iqtest) {
-      iqtest.querySelector(".block-subtitle").innerText =
-        "The application is designed for conducting IQ testing with automatic calculation of results and generation of detailed reports.";
-    }
+   
 
-    // Адаптация: Перевод описания для сервиса ATI Sync Engine
-    if (atiAutomation) {
-      atiAutomation.querySelector(".project-description").innerText =
-        "An automated integration service (middleware) for parsing, aggregating, and synchronizing freight data between private logistics platforms (Atrucks, Loginet, TorgTrans, Kamkabel, Holdcable) and the ATI.su exchange. Integrated with DeepSeek API for AI-powered parsing of raw addresses, it supports cookie sync via a custom browser extension and fully automates the cargo lifecycle (auto-publishing new lots and auto-deleting expired ones).";
+    // Понятный и структурированный перевод для Polymarket HFT проекта
+    if (hftSniper) {
+      const descriptionElement = hftSniper.querySelector(".project-description");
+      if (descriptionElement) {
+        descriptionElement.innerText =
+          "Full-cycle high-frequency trading infrastructure for Polymarket binary options (btc/eth-5m). Components: 1) V47 Velocity Matrix strategy utilizing logistic regression modeling, OBI/CVD volume metrics, and Velocity Stalling Guards against false impulses. 2) Production-grade Node.js execution engine with TCP socket optimization (setNoDelay, keep-alive pooling), proxy-safe REST IOC routing (Builder Code), and instant synchronization via private User WebSocket streams. 3) Non-blocking telemetry collector recording order books 4 times per second into JSONL storage alongside a stream-based backtester using the readline API to generate error cross-matrices and eliminate adverse selection.";
+      }
     }
 
     const secondTitle = document.querySelector(".second-title");
